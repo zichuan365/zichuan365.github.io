@@ -4,11 +4,24 @@
   
     
     <entry>
-      <title>操作系统 / 计算机网络概要</title>
+      <title>基础概念/ 计算机网络</title>
+      <link href="/2020/07/14/714/"/>
+      <url>/2020/07/14/714/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>基础概念/ 操作系统 </title>
       <link href="/2020/07/13/inter2/"/>
       <url>/2020/07/13/inter2/</url>
       
-        <content type="html"><![CDATA[<h3 id="1-操作系统主要内容：定义（CPU管理、内存管理）"><a href="#1-操作系统主要内容：定义（CPU管理、内存管理）" class="headerlink" title="1.操作系统主要内容：定义（CPU管理、内存管理）"></a>1.操作系统主要内容：定义（CPU管理、内存管理）</h3><ul><li>定义：用于控制和管理计算机的硬件和软件，合理调度CPU和内存等资源，分配给用户和其他软件的接口和环境</li><li>分类：分时操作系统，实时操作系统。<ol><li>分时操作系统（windows）——计算机以时间片为单位，轮流给各个用户服务。解决了人机交互问题。（各个用户通过终端与计算机交互）</li><li>实时操作系统（嵌入式）：计算机接收到外部信号后及时处理，触发马上反应。（即时性和可靠性）</li></ol></li></ul><h3 id="2-操作系统的基本特性"><a href="#2-操作系统的基本特性" class="headerlink" title="2.操作系统的基本特性"></a>2.操作系统的基本特性</h3><ol><li>并发性：操作系统可以同时运行多个进程。不管是多核CPU还是单核CPU的计算机。（分时运行，分是获得CPU资源）</li><li>共享性：同时运行的进程可以共同使用系统中的资源。（互斥和同步访问）同步也是在互斥的基础上实现的访问机制。</li><li>异步性：进程不是一次性执行完成，而是走走停停的，但是最后结果不变。</li><li>虚拟性：虚拟是指将物理上的一个实体变为多个对应逻辑物。计算机中主要用于时分复用（CPU）和空分复用（虚拟内存）。</li></ol><h3 id="3-计算机的主要功能"><a href="#3-计算机的主要功能" class="headerlink" title="3.计算机的主要功能"></a>3.计算机的主要功能</h3><ol><li>CPU管理——合理分配CPU资源，进行进程管理：进程同步，通信、调度等</li><li>内存管理——对内存和虚拟内存管理：合理分配内存空间，进程间不发生死锁等异常情况。</li><li>文件管理——系统、用户文件的管理</li><li>IO设备管理——对外围设备的管理，分配接口等</li></ol>]]></content>
+        <content type="html"><![CDATA[<h1 id="核心：CPU管理、内存管理"><a href="#核心：CPU管理、内存管理" class="headerlink" title="核心：CPU管理、内存管理"></a>核心：CPU管理、内存管理</h1><p><img src="/pictures/clipboard.png" alt="img1"></p><h2 id="操作系统概念"><a href="#操作系统概念" class="headerlink" title="操作系统概念"></a>操作系统概念</h2><p><strong>1.操作系统主要内容：定义（CPU管理、内存管理）</strong></p><ul><li>定义：用于控制和管理计算机的硬件和软件，合理调度CPU和内存等资源，分配给用户和其他软件的接口和环境</li><li>分类：分时操作系统，实时操作系统。<ol><li>分时操作系统（windows）——计算机以时间片为单位，轮流给各个用户服务。解决了人机交互问题。（各个用户通过终端与计算机交互）</li><li>实时操作系统（嵌入式）：计算机接收到外部信号后及时处理，触发马上反应。（即时性和可靠性）</li></ol></li></ul><p><strong>2.操作系统的基本特性</strong></p><ol><li>并发性：操作系统可以同时运行多个进程。不管是多核CPU还是单核CPU的计算机。（分时运行，分是获得CPU资源）</li><li>共享性：同时运行的进程可以共同使用系统中的资源。（互斥和同步访问）同步也是在互斥的基础上实现的访问机制。</li><li>异步性：进程不是一次性执行完成，而是走走停停的，但是最后结果不变。</li><li>虚拟性：虚拟是指将物理上的一个实体变为多个对应逻辑物。计算机中主要用于时分复用（CPU）和空分复用（虚拟内存）。</li></ol><p>补充：并发指的是多个程序同时运行，但是单核CPU穿插运行两个进程，通过时分复用来提高CPU的效率。<br>     并行指的是在多核CPU上分别运行进程，是并行运算提高计算机性能。</p><p>** 3.计算机的主要功能**</p><ol><li>CPU管理——合理分配CPU资源，进行进程管理：进程同步，通信、调度等</li><li>内存管理——对内存和虚拟内存管理：合理分配内存空间，进程间不发生死锁等异常情况。</li><li>文件管理——系统、用户文件的管理</li><li>IO设备管理——对外围设备的管理，分配接口等</li></ol><h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><p>线程：是CPU调度的最小单位。</p><p>进程：是系统资源调度分配基本单位。</p><p>** 1.进程定义**</p><p>进程定义：进程是对运行程序的封装，一个进程可以包含一个或多个程序。进程是系统资源调度的基本单位。运行的微信、QQ都是一个进程。</p><p>生命周期：（获得其他资源和CPU资源的过程）</p><ol><li>新建：未获得资源</li><li>就绪：获得其他资源，等待CPU资源</li><li>运行：获得其他资源，获得CPU资源</li><li>阻塞：等待触发事件以获得时间片资源，CPU空闲也不会运行</li><li>终止：退出，释放所有资源<br><img src="/pictures/clipboard1.png" alt="img2"></li></ol><p>** CPU资源以时间片来分配。**</p><p>** 2.进程和程序的关系**</p><p>程序由一系列代码组成。而进程由程序、程序包含的数据，进程块组成。<br>从广度上看，进程是程序的动态体现，程序是进程的静态体现，两者相辅相成。<br>程序构建进程，进程执行程序。</p>]]></content>
       
       
       <categories>
@@ -20,18 +33,12 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> 操作系统 </tag>
-            
-        </tags>
-      
     </entry>
     
     
     
     <entry>
-      <title>target：7.11——make a better Blog</title>
+      <title>target/ 7.11——make a better Blog</title>
       <link href="/2020/07/11/inter1/"/>
       <url>/2020/07/11/inter1/</url>
       
@@ -47,18 +54,12 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> targetBlog </tag>
-            
-        </tags>
-      
     </entry>
     
     
     
     <entry>
-      <title>获得系统实时时间ms</title>
+      <title>C++/ 获得系统实时时间ms</title>
       <link href="/2020/07/11/time/"/>
       <url>/2020/07/11/time/</url>
       
@@ -74,12 +75,6 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> C++ </tag>
-            
-        </tags>
-      
     </entry>
     
     
@@ -89,7 +84,7 @@
       <link href="/2020/07/10/hello-world/"/>
       <url>/2020/07/10/hello-world/</url>
       
-        <content type="html"><![CDATA[<h2 id="Blog模板"><a href="#Blog模板" class="headerlink" title="Blog模板"></a>Blog模板</h2><h3 id="1-标题1"><a href="#1-标题1" class="headerlink" title="1.标题1"></a>1.标题1</h3><h3 id="2-标题2"><a href="#2-标题2" class="headerlink" title="2.标题2"></a>2.标题2</h3><h3 id="3-标题3"><a href="#3-标题3" class="headerlink" title="3.标题3"></a>3.标题3</h3><h3 id="4-标题4"><a href="#4-标题4" class="headerlink" title="4.标题4"></a>4.标题4</h3><p>单行代码</p><p>  <code>#include——单行代码</code></p><p>(<code>)//代码段//#include&lt;iostream&gt;//#include&lt;vector&gt;//#include&lt;stdio.h&gt;//#include&lt;string.h&gt;(</code>)</p><ul><li>文本1</li><li>文本2</li><li>文本3</li></ul><p><em>倾斜</em></p><p><strong>加粗</strong></p><p><strong><em>斜体加粗</em></strong></p><p><del>删除线</del></p><p>分割线</p><hr><p><img src="/picture/inter.jpg" alt="img1"></p><hr><table><thead><tr><th>姓名</th><th align="center">技能</th><th align="right">排行</th></tr></thead><tbody><tr><td>刘备</td><td align="center">毛豆</td><td align="right">大哥</td></tr><tr><td>关羽</td><td align="center">曼抬</td><td align="right">二哥</td></tr><tr><td>张飞</td><td align="center">破车</td><td align="right">三弟</td></tr></tbody></table><hr><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ CODE</span><br></pre></td></tr></table></figure><hr><p>超链接More info: <a href="https://tieba.baidu.com/f?kw=%B9%FA%BC%CA%C3%D7%C0%BC&fr=ala0&tpl=5" target="_blank" rel="noopener">INTER</a></p><hr><p>github+hexo教程：<br><a href="https://handsomesuperred.github.io/archives/" target="_blank" rel="noopener">https://handsomesuperred.github.io/archives/</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Blog模板"><a href="#Blog模板" class="headerlink" title="Blog模板"></a>Blog模板</h2><h3 id="1-标题1"><a href="#1-标题1" class="headerlink" title="1.标题1"></a>1.标题1</h3><h3 id="2-标题2"><a href="#2-标题2" class="headerlink" title="2.标题2"></a>2.标题2</h3><h3 id="3-标题3"><a href="#3-标题3" class="headerlink" title="3.标题3"></a>3.标题3</h3><h3 id="4-标题4"><a href="#4-标题4" class="headerlink" title="4.标题4"></a>4.标题4</h3><ul><li>文本1</li><li>文本2</li><li>文本3</li></ul><p><em>倾斜</em></p><p><strong>加粗</strong></p><p><strong><em>斜体加粗</em></strong></p><p><del>删除线</del></p><p>分割线</p><hr><p><img src="/pictures/inter.jpg" alt="img1"></p><hr><table><thead><tr><th>姓名</th><th align="center">技能</th><th align="right">排行</th></tr></thead><tbody><tr><td>刘备</td><td align="center">毛豆</td><td align="right">大哥</td></tr><tr><td>关羽</td><td align="center">曼抬</td><td align="right">二哥</td></tr><tr><td>张飞</td><td align="center">破车</td><td align="right">三弟</td></tr></tbody></table><hr><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ CODE</span><br><span class="line">//<span class="comment">#include&lt;iostream&gt;</span></span><br><span class="line">//<span class="comment">#include&lt;vector&gt;</span></span><br><span class="line">//<span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line">//<span class="comment">#include&lt;string.h&gt;</span></span><br></pre></td></tr></table></figure><hr><p>超链接More info: <a href="https://tieba.baidu.com/f?kw=%B9%FA%BC%CA%C3%D7%C0%BC&fr=ala0&tpl=5" target="_blank" rel="noopener">INTER</a></p><hr><p>github+hexo教程：<br><a href="https://handsomesuperred.github.io/archives/" target="_blank" rel="noopener">https://handsomesuperred.github.io/archives/</a></p>]]></content>
       
       
       <categories>
@@ -100,12 +95,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> Blog模板 </tag>
-            
-        </tags>
       
     </entry>
     
