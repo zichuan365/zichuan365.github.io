@@ -7,7 +7,206 @@
     error: '复制错误',
     noSupport: '浏览器不支持'
   }
-} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/22.jpg"></div><div class="author-info__name text-center">Inter</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">23</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">3</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">22</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" href="https://blog.csdn.net/Kano365" target="_blank" rel="noopener">CSDN</a><a class="author-info-links__name text-center" href="https://www.baidu.com/" target="_blank" rel="noopener">Baidu</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/6.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Zichuan365' Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/gallery">Gallery</a><a class="site-page" href="/about">About</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">C++ / 数据结构</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-07-28</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/learn/">learn</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/learn/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>C++ / 数据结构</p>
+} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#哈希表（散列表）"><span class="toc-number">1.</span> <span class="toc-text">哈希表（散列表）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-定义"><span class="toc-number">1.1.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-作用以及优点和缺点"><span class="toc-number">1.2.</span> <span class="toc-text">2.作用以及优点和缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#优点和缺点"><span class="toc-number">1.2.1.</span> <span class="toc-text">优点和缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-应用"><span class="toc-number">1.3.</span> <span class="toc-text">3.应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-常见的散列函数"><span class="toc-number">1.4.</span> <span class="toc-text">4.常见的散列函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉搜索树（根本）"><span class="toc-number">2.</span> <span class="toc-text">二叉搜索树（根本）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平衡二叉树（AVL树）"><span class="toc-number">3.</span> <span class="toc-text">平衡二叉树（AVL树）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-作用"><span class="toc-number">3.1.</span> <span class="toc-text">1.作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-定义"><span class="toc-number">3.2.</span> <span class="toc-text">2.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-平衡二叉树的元素插入"><span class="toc-number">3.3.</span> <span class="toc-text">3.平衡二叉树的元素插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-平衡二叉树的特点"><span class="toc-number">3.4.</span> <span class="toc-text">4.平衡二叉树的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#红黑树"><span class="toc-number">4.</span> <span class="toc-text">红黑树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#性质"><span class="toc-number">4.1.</span> <span class="toc-text">性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-定义-1"><span class="toc-number">4.2.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-红黑树的插入"><span class="toc-number">4.3.</span> <span class="toc-text">2.红黑树的插入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B树-B-树-B-树（打破Key-Value一一对应关系）"><span class="toc-number">5.</span> <span class="toc-text">B树 &#x2F; B+树 &#x2F; B*树（打破Key_Value一一对应关系）</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/22.jpg"></div><div class="author-info__name text-center">Inter</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">23</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">3</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">22</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" href="https://blog.csdn.net/Kano365" target="_blank" rel="noopener">CSDN</a><a class="author-info-links__name text-center" href="https://www.baidu.com/" target="_blank" rel="noopener">Baidu</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/6.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Zichuan365' Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/gallery">Gallery</a><a class="site-page" href="/about">About</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">C++ / 数据结构</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-07-28</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/learn/">learn</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/learn/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="哈希表（散列表）"><a href="#哈希表（散列表）" class="headerlink" title="哈希表（散列表）"></a>哈希表（散列表）</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><ul>
+<li><blockquote>
+<p>哈希表是一种数据结构。一种<strong>Value数据内容</strong>和<strong>Key数据存放地址</strong>之间的<strong>映射关系</strong>。</p>
+</blockquote>
+</li>
+<li><p>关键是Key和value值，我们通过Key值直接访问Value值</p>
+</li>
+<li><p>这种<strong>反应映射关系</strong>的函数称为：<strong>散列函数</strong> 。存放数据的数组称为散列表。</p>
+</li>
+</ul>
+<p><img src="/pictures/clipboard74.png" alt="img"></p>
+<h3 id="2-作用以及优点和缺点"><a href="#2-作用以及优点和缺点" class="headerlink" title="2.作用以及优点和缺点"></a>2.作用以及优点和缺点</h3><ul>
+<li><blockquote>
+<p>我们需要一种快速寻址，插入删除方便的数据结构。</p>
+</blockquote>
+</li>
+<li>数组是内存中的连续空间，寻址快速，插入删除困难。</li>
+<li>链表是内存中不连续的空间，寻址困难，插入删除快速。</li>
+<li><strong>而哈希表是一种快速寻址，插入删除容易的数据结构。</strong></li>
+</ul>
+<h4 id="优点和缺点"><a href="#优点和缺点" class="headerlink" title="优点和缺点"></a>优点和缺点</h4><ul>
+<li>优点：一对一查找高效 O(1)</li>
+<li>缺点：散列函数的定义，一个Key对应多个散列地址</li>
+<li>散列冲突：不同关键字，返回同个散列地址，散列函数定义困难<ul>
+<li>优秀的散列函数  =   计算简单  +分布均匀</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><blockquote>
+<p>散列冲突的解决方案：</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>开放寻址法：当发现散列冲突后，按着顺序往下查找空余位置存放数据。简单来说就是进行二次探测。</li>
+<li>链表法：在同一个Key对应的位置使用链表，从而达到存放多个数据的目的</li>
+</ol>
+<h3 id="3-应用"><a href="#3-应用" class="headerlink" title="3.应用"></a>3.应用</h3><ol>
+<li><strong>安全领域的加密算法</strong>：把一些不同长度的信息转化为杂乱128位的编码，编码值叫Hash值。</li>
+<li><strong>数据的快速查找</strong>：哈希表，又称散列，快捷的查找技术。原查找：A去和{532415646541A}比较  哈希查找：我知道了key值，直接去找对应位置的value值。</li>
+<li><strong>大数据处理</strong>中有着广泛的应用，提高查找的效率</li>
+</ol>
+<h3 id="4-常见的散列函数"><a href="#4-常见的散列函数" class="headerlink" title="4.常见的散列函数"></a>4.常见的散列函数</h3><ul>
+<li><blockquote>
+<p>1.除法散列法<br>index = value % 16 上表即是</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>2.平方散列法</p>
+</blockquote>
+</li>
+<li><p>index = (value * value) &gt;&gt; 28     右移—转换为除法为2^28次</p>
+</li>
+<li><p>数值分配均匀是可以的，但是value很大会溢出</p>
+</li>
+<li><blockquote>
+<p>3.斐波那契散列法    /   （黄金分割法）</p>
+</blockquote>
+</li>
+<li><p>找到一个合理的乘数</p>
+</li>
+<li><p>1，对于16位整数而言，这个乘数是40503 </p>
+</li>
+<li><p>2，对于32位整数而言，这个乘数是2654435769 </p>
+</li>
+<li><p>3，对于64位整数而言，这个乘数是11400714819323198485</p>
+</li>
+<li><p>对于32位整数：</p>
+<ul>
+<li>index = (value * 2654435769) &gt;&gt; 28</li>
+</ul>
+</li>
+<li><p>散列表分布更加均匀</p>
+</li>
+</ul>
+<hr>
+<h2 id="二叉搜索树（根本）"><a href="#二叉搜索树（根本）" class="headerlink" title="二叉搜索树（根本）"></a>二叉搜索树（根本）</h2><ul>
+<li><blockquote>
+<p>左中右 / 左 &lt; 中 &lt; 右</p>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="平衡二叉树（AVL树）"><a href="#平衡二叉树（AVL树）" class="headerlink" title="平衡二叉树（AVL树）"></a>平衡二叉树（AVL树）</h2><h3 id="1-作用"><a href="#1-作用" class="headerlink" title="1.作用"></a>1.作用</h3><ul>
+<li><blockquote>
+<p>平衡二叉树是基于<strong>二分法</strong>来提高数据查找速度的二叉树结构。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-定义"><a href="#2-定义" class="headerlink" title="2.定义"></a>2.定义</h3><ol>
+<li>二叉搜索树，遵循高度差原则（左右子树高度差不大于1）<ul>
+<li>平衡因子：左子树高度 - 右子树高度，取值范围[-1，1]</li>
+<li>最小不平衡子树：距离插入节点最近的，打破平衡的子树。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-平衡二叉树的元素插入"><a href="#3-平衡二叉树的元素插入" class="headerlink" title="3.平衡二叉树的元素插入"></a>3.平衡二叉树的元素插入</h3><ul>
+<li><blockquote>
+<p>当插入元素打破平衡二叉树平衡时（平衡因子变2），需要进行节点的调整。</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>LL型——root节点左孩子的左孩子+新节点——打破平衡</li>
+<li>RR型</li>
+<li>LR型</li>
+<li>RL型</li>
+</ol>
+<hr>
+<ul>
+<li><blockquote>
+<p><strong>LL型</strong>（和RR型都是断开两个节点，然后平衡子树）<br><img src="/pictures/clipboard75.png" alt="img"><br><img src="/pictures/clipboard76.png" alt="img"><br><img src="/pictures/clipboard77.png" alt="img"></p>
+</blockquote>
+</li>
+<li><strong>和左孩子连接的两处，断开</strong></li>
+<li><strong>左孩子变成新根节点</strong></li>
+<li><strong>依次连接到左孩子上</strong></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BTNode *<span class="title">LL_rotate</span><span class="params">(BTNode *y)</span> </span>&#123;</span><br><span class="line">	BTNode *x = y-&gt;left;	<span class="comment">//保存临时左孩子</span></span><br><span class="line">	y-&gt;left = x-&gt;right;		<span class="comment">//老根加新L</span></span><br><span class="line">	x-&gt;right = y; 			<span class="comment">//老根连到新根</span></span><br><span class="line"></span><br><span class="line">	y-&gt;<span class="built_in">height</span> = <span class="built_in">max</span>(<span class="built_in">height</span>(y-&gt;left), <span class="built_in">height</span>(y-&gt;right)) + <span class="number">1</span>;  <span class="comment">//计算变更后树的高度</span></span><br><span class="line">	x-&gt;<span class="built_in">height</span> = <span class="built_in">max</span>(<span class="built_in">height</span>(x-&gt;left), <span class="built_in">height</span>(x-&gt;right)) + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><blockquote>
+<p><strong>RR型</strong>（和LL型类似）<br><img src="/pictures/clipboard78.png" alt="img"></p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BTNode *<span class="title">rr_rotate</span><span class="params">(struct Node *y)</span> </span>&#123;</span><br><span class="line">	BTNode *x = y-&gt;right;	<span class="comment">//保存临时右孩子</span></span><br><span class="line">	y-&gt;right = x-&gt;left;		<span class="comment">//老根加新R</span></span><br><span class="line">	x-&gt;left = y;			<span class="comment">//老根连到新根</span></span><br><span class="line"></span><br><span class="line">	y-&gt;<span class="built_in">height</span> = <span class="built_in">max</span>(<span class="built_in">height</span>(y-&gt;left), <span class="built_in">height</span>(y-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">	x-&gt;<span class="built_in">height</span> = <span class="built_in">max</span>(<span class="built_in">height</span>(x-&gt;left), <span class="built_in">height</span>(x-&gt;right)) + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><blockquote>
+<p><strong>LR型</strong>（利用LL型和RR型）<br><img src="/pictures/clipboard79.png" alt="img"><br><img src="/pictures/clipboard80.png" alt="img"></p>
+</blockquote>
+</li>
+<li><strong>断开三个节点，然后平衡子树，可以利用LL和RR来实现</strong></li>
+</ul>
+<ol>
+<li><strong>先对左孩子RR旋转</strong></li>
+<li><strong>再对整体LL旋转</strong></li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BTNode* <span class="title">lr_rotate</span><span class="params">(BTNode* y)</span> </span>&#123;</span><br><span class="line">	BTNode* x = y-&gt;left;		<span class="comment">//临时变量L节点</span></span><br><span class="line">	y-&gt;left = rr_rotate(x);		<span class="comment">//对根节点的左节点进行RR变换</span></span><br><span class="line">	<span class="keyword">return</span> ll_rotate(y);		<span class="comment">//再对根节点进行LL变换</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><blockquote>
+<p><strong>RL型</strong>（类似）<br><img src="/pictures/clipboard81.png" alt="img"></p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li><strong>先对右孩子LL旋转</strong></li>
+<li><strong>再对整体RR旋转</strong></li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BTNode* <span class="title">rl_rotate</span><span class="params">(BTNode* y)</span> </span>&#123;</span><br><span class="line">	BTNode* x = y-&gt;right;		<span class="comment">//临时变量R节点</span></span><br><span class="line">	y-&gt;right = ll_rotate(x);	<span class="comment">//对根节点的右节点的R节点进行LL变换</span></span><br><span class="line">	<span class="keyword">return</span> rr_rotate(y);		<span class="comment">//对根节点进行RR变换</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-平衡二叉树的特点"><a href="#4-平衡二叉树的特点" class="headerlink" title="4.平衡二叉树的特点"></a>4.平衡二叉树的特点</h3><ol>
+<li>查找元素所花时间不固定，平均log2n。</li>
+<li>高度平衡，维护代价比较高，需要不断的旋转二叉树保持稳定。</li>
+</ol>
+<hr>
+<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ul>
+<li><blockquote>
+<p>关键性质：从根结点出发，每条路径最大差异为一倍，所以保证了红黑树大致的平衡</p>
+</blockquote>
+</li>
+<li>极限情况：max = 2 * min<h3 id="1-定义-1"><a href="#1-定义-1" class="headerlink" title="1.定义"></a>1.定义</h3></li>
+<li><blockquote>
+<p>二叉搜索树，同时遵循<strong>红定理</strong>和<strong>黑定理</strong></p>
+</blockquote>
+<ul>
+<li>没有连续的红色节点</li>
+<li>所有路径上黑色节点个数相同Sum（根节点为黑色）</li>
+</ul>
+</li>
+</ul>
+<p><img src="/pictures/clipboard82.png" alt="img"></p>
+<h3 id="2-红黑树的插入"><a href="#2-红黑树的插入" class="headerlink" title="2.红黑树的插入"></a>2.红黑树的插入</h3><ul>
+<li><blockquote>
+<p>旋转较少，维护比较容易</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>我们默认插入的是<strong>红色节点</strong>红，因为默认插入黑色节点时，开销太大。</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>当父节点为<strong>黑色</strong>，直接插入</li>
+<li>当父节点为<strong>红色</strong>，祖父节点必为黑色。<ol>
+<li><strong>叔叔存在且红</strong>——父亲变黑色节点，然后根据颜色变化继续向上调整。</li>
+<li><strong>叔叔存在且黑</strong>——和叔叔交换，并调整位置满足二叉搜索树</li>
+<li><strong>叔叔不存在</strong>——占据叔叔位置，并调整位置满足二叉搜索树</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h2 id="B树-B-树-B-树（打破Key-Value一一对应关系）"><a href="#B树-B-树-B-树（打破Key-Value一一对应关系）" class="headerlink" title="B树 / B+树 / B*树（打破Key_Value一一对应关系）"></a>B树 / B+树 / B*树（打破Key_Value一一对应关系）</h2><ul>
+<li><blockquote>
+<p>一个节点保存多个Value值</p>
+</blockquote>
+</li>
+</ul>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Inter</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zichuan365.github.io/2020/07/28/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-1/">https://zichuan365.github.io/2020/07/28/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zichuan365.github.io">Zichuan365' Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/07/29/LeetCode-%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F-1/"><i class="fa fa-chevron-left">  </i><span>LeetCode  / 十大排序</span></a></div><div class="next-post pull-right"><a href="/2020/07/24/C-%E6%95%B0%E6%8D%AE%E5%BA%93-1/"><span>C++ / 数据库</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer class="footer-bg" style="background-image: url(/img/6.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2019 - 2020 By Inter</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="footer_custom_text">hitokoto</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
   $('#nav').addClass('is-mobile')
   $('footer').addClass('is-mobile')
