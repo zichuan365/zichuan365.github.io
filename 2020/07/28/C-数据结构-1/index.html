@@ -7,7 +7,7 @@
     error: '复制错误',
     noSupport: '浏览器不支持'
   }
-} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#哈希表（散列表）"><span class="toc-number">1.</span> <span class="toc-text">哈希表（散列表）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-定义"><span class="toc-number">1.1.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-作用以及优点和缺点"><span class="toc-number">1.2.</span> <span class="toc-text">2.作用以及优点和缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#优点和缺点"><span class="toc-number">1.2.1.</span> <span class="toc-text">优点和缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-应用"><span class="toc-number">1.3.</span> <span class="toc-text">3.应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-常见的散列函数"><span class="toc-number">1.4.</span> <span class="toc-text">4.常见的散列函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉搜索树（根本）"><span class="toc-number">2.</span> <span class="toc-text">二叉搜索树（根本）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平衡二叉树（AVL树）"><span class="toc-number">3.</span> <span class="toc-text">平衡二叉树（AVL树）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-作用"><span class="toc-number">3.1.</span> <span class="toc-text">1.作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-定义"><span class="toc-number">3.2.</span> <span class="toc-text">2.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-平衡二叉树的元素插入"><span class="toc-number">3.3.</span> <span class="toc-text">3.平衡二叉树的元素插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-平衡二叉树的特点"><span class="toc-number">3.4.</span> <span class="toc-text">4.平衡二叉树的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#红黑树"><span class="toc-number">4.</span> <span class="toc-text">红黑树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#性质"><span class="toc-number">4.1.</span> <span class="toc-text">性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-定义-1"><span class="toc-number">4.2.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-红黑树的旋转-颜色（插入）"><span class="toc-number">4.3.</span> <span class="toc-text">2.红黑树的旋转_颜色（插入）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-红黑树的左旋和右旋（需要指定父节点）"><span class="toc-number">4.4.</span> <span class="toc-text">3.红黑树的左旋和右旋（需要指定父节点）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B树-B-树-B-树特点（单节点多Value）"><span class="toc-number">5.</span> <span class="toc-text">B树 &#x2F; B+树 &#x2F; B*树特点（单节点多Value）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B树"><span class="toc-number">6.</span> <span class="toc-text">B树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-特点：可以存放更过元素，层数更低"><span class="toc-number">6.1.</span> <span class="toc-text">1.特点：可以存放更过元素，层数更低</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-定义——H树的阶数"><span class="toc-number">6.2.</span> <span class="toc-text">2.定义——H树的阶数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-元素的插入和删除"><span class="toc-number">6.3.</span> <span class="toc-text">3.元素的插入和删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-特点"><span class="toc-number">6.4.</span> <span class="toc-text">4.特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-树"><span class="toc-number">7.</span> <span class="toc-text">B+树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-特点"><span class="toc-number">7.1.</span> <span class="toc-text">1.特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-定义-1"><span class="toc-number">7.2.</span> <span class="toc-text">2.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-特点"><span class="toc-number">7.3.</span> <span class="toc-text">3.特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-树-1"><span class="toc-number">8.</span> <span class="toc-text">B*树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#和B-树的区别"><span class="toc-number">8.1.</span> <span class="toc-text">和B+树的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点"><span class="toc-number">8.2.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number">8.3.</span> <span class="toc-text">优点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#所有树的总结"><span class="toc-number">9.</span> <span class="toc-text">所有树的总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-All树"><span class="toc-number">9.1.</span> <span class="toc-text">1.All树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-B树三种树的优劣-Important"><span class="toc-number">9.2.</span> <span class="toc-text">2.B树三种树的优劣 &#x2F; Important</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-拓展：Trie字典树（前缀树-空间换时间）"><span class="toc-number">9.3.</span> <span class="toc-text">3.拓展：Trie字典树（前缀树 &#x2F; 空间换时间）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题问题"><span class="toc-number">10.</span> <span class="toc-text">问题问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-说一下平衡二叉树和红黑树的定义、特定、区别"><span class="toc-number">10.1.</span> <span class="toc-text">1.说一下平衡二叉树和红黑树的定义、特定、区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-平衡二叉树AVL、红黑树、B树的运用场景"><span class="toc-number">10.2.</span> <span class="toc-text">2.平衡二叉树AVL、红黑树、B树的运用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-请你说一下哈夫曼-霍夫曼编码"><span class="toc-number">10.3.</span> <span class="toc-text">3.请你说一下哈夫曼&#x2F;霍夫曼编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Map-Set的底层为什么用红黑树"><span class="toc-number">10.4.</span> <span class="toc-text">4.Map &#x2F; Set的底层为什么用红黑树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-说一下B树"><span class="toc-number">10.5.</span> <span class="toc-text">5.说一下B树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-说一下B-树"><span class="toc-number">10.6.</span> <span class="toc-text">6.说一下B+树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-请你说一下map和unordered-map的底层实现"><span class="toc-number">10.7.</span> <span class="toc-text">7.请你说一下map和unordered_map的底层实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-请你说一下红黑树的性质还有左右旋转"><span class="toc-number">10.8.</span> <span class="toc-text">8.请你说一下红黑树的性质还有左右旋转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-Stack-overflow-栈溢出，举个简单的例子导致栈溢出"><span class="toc-number">10.9.</span> <span class="toc-text">9.Stack overflow&#x2F;栈溢出，举个简单的例子导致栈溢出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-栈和堆的区别，为什么栈快"><span class="toc-number">10.10.</span> <span class="toc-text">10.栈和堆的区别，为什么栈快</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-说一下数组和链表的区别"><span class="toc-number">10.11.</span> <span class="toc-text">11.说一下数组和链表的区别</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/22.jpg"></div><div class="author-info__name text-center">Inter</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">24</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">3</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">22</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" href="https://blog.csdn.net/Kano365" target="_blank" rel="noopener">CSDN</a><a class="author-info-links__name text-center" href="https://www.baidu.com/" target="_blank" rel="noopener">Baidu</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/6.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Zichuan365' Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/gallery">Gallery</a><a class="site-page" href="/about">About</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">C++ / 数据结构</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-07-28</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/learn/">learn</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/learn/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="哈希表（散列表）"><a href="#哈希表（散列表）" class="headerlink" title="哈希表（散列表）"></a>哈希表（散列表）</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><ul>
+} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#哈希表（散列表）"><span class="toc-number">1.</span> <span class="toc-text">哈希表（散列表）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-定义"><span class="toc-number">1.1.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-作用以及优点和缺点"><span class="toc-number">1.2.</span> <span class="toc-text">2.作用以及优点和缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#优点和缺点"><span class="toc-number">1.2.1.</span> <span class="toc-text">优点和缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-应用"><span class="toc-number">1.3.</span> <span class="toc-text">3.应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-常见的散列函数"><span class="toc-number">1.4.</span> <span class="toc-text">4.常见的散列函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二叉搜索树（根本）"><span class="toc-number">2.</span> <span class="toc-text">二叉搜索树（根本）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平衡二叉树（AVL树）"><span class="toc-number">3.</span> <span class="toc-text">平衡二叉树（AVL树）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-作用"><span class="toc-number">3.1.</span> <span class="toc-text">1.作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-定义"><span class="toc-number">3.2.</span> <span class="toc-text">2.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-平衡二叉树的元素插入"><span class="toc-number">3.3.</span> <span class="toc-text">3.平衡二叉树的元素插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-平衡二叉树的特点"><span class="toc-number">3.4.</span> <span class="toc-text">4.平衡二叉树的特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#红黑树"><span class="toc-number">4.</span> <span class="toc-text">红黑树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#性质"><span class="toc-number">4.1.</span> <span class="toc-text">性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-定义-1"><span class="toc-number">4.2.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-红黑树的旋转后、重新着色（插入）"><span class="toc-number">4.3.</span> <span class="toc-text">2.红黑树的旋转后、重新着色（插入）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-红黑树的左旋和右旋（需要指定父节点）"><span class="toc-number">4.4.</span> <span class="toc-text">3.红黑树的左旋和右旋（需要指定父节点）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B树-B-树-B-树特点（单节点多Value）"><span class="toc-number">5.</span> <span class="toc-text">B树 &#x2F; B+树 &#x2F; B*树特点（单节点多Value）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B树"><span class="toc-number">6.</span> <span class="toc-text">B树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-特点：可以存放更过元素，层数更低"><span class="toc-number">6.1.</span> <span class="toc-text">1.特点：可以存放更过元素，层数更低</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-定义——H树的阶数"><span class="toc-number">6.2.</span> <span class="toc-text">2.定义——H树的阶数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-元素的插入和删除"><span class="toc-number">6.3.</span> <span class="toc-text">3.元素的插入和删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-特点"><span class="toc-number">6.4.</span> <span class="toc-text">4.特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-树"><span class="toc-number">7.</span> <span class="toc-text">B+树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-特点"><span class="toc-number">7.1.</span> <span class="toc-text">1.特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-定义-1"><span class="toc-number">7.2.</span> <span class="toc-text">2.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-特点"><span class="toc-number">7.3.</span> <span class="toc-text">3.特点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-树-1"><span class="toc-number">8.</span> <span class="toc-text">B*树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#和B-树的区别"><span class="toc-number">8.1.</span> <span class="toc-text">和B+树的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特点"><span class="toc-number">8.2.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优点"><span class="toc-number">8.3.</span> <span class="toc-text">优点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#所有树的总结"><span class="toc-number">9.</span> <span class="toc-text">所有树的总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-All树"><span class="toc-number">9.1.</span> <span class="toc-text">1.All树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-B树三种树的优劣-Important"><span class="toc-number">9.2.</span> <span class="toc-text">2.B树三种树的优劣 &#x2F; Important</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-拓展：Trie字典树（前缀树-空间换时间）"><span class="toc-number">9.3.</span> <span class="toc-text">3.拓展：Trie字典树（前缀树 &#x2F; 空间换时间）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题问题"><span class="toc-number">10.</span> <span class="toc-text">问题问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-说一下平衡二叉树和红黑树的定义、特定、区别"><span class="toc-number">10.1.</span> <span class="toc-text">1.说一下平衡二叉树和红黑树的定义、特定、区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-平衡二叉树AVL、红黑树、B树的运用场景"><span class="toc-number">10.2.</span> <span class="toc-text">2.平衡二叉树AVL、红黑树、B树的运用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-请你说一下哈夫曼-霍夫曼编码"><span class="toc-number">10.3.</span> <span class="toc-text">3.请你说一下哈夫曼&#x2F;霍夫曼编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Map-Set的底层为什么用红黑树"><span class="toc-number">10.4.</span> <span class="toc-text">4.Map &#x2F; Set的底层为什么用红黑树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-说一下B树"><span class="toc-number">10.5.</span> <span class="toc-text">5.说一下B树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-说一下B-树"><span class="toc-number">10.6.</span> <span class="toc-text">6.说一下B+树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-请你说一下map和unordered-map的底层实现"><span class="toc-number">10.7.</span> <span class="toc-text">7.请你说一下map和unordered_map的底层实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-请你说一下红黑树的性质还有左右旋转"><span class="toc-number">10.8.</span> <span class="toc-text">8.请你说一下红黑树的性质还有左右旋转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-Stack-overflow-栈溢出，举个简单的例子导致栈溢出"><span class="toc-number">10.9.</span> <span class="toc-text">9.Stack overflow&#x2F;栈溢出，举个简单的例子导致栈溢出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-栈和堆的区别，为什么栈快"><span class="toc-number">10.10.</span> <span class="toc-text">10.栈和堆的区别，为什么栈快</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-说一下数组和链表的区别"><span class="toc-number">10.11.</span> <span class="toc-text">11.说一下数组和链表的区别</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/22.jpg"></div><div class="author-info__name text-center">Inter</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">24</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">3</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">22</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" href="https://blog.csdn.net/Kano365" target="_blank" rel="noopener">CSDN</a><a class="author-info-links__name text-center" href="https://www.baidu.com/" target="_blank" rel="noopener">Baidu</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/6.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Zichuan365' Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/gallery">Gallery</a><a class="site-page" href="/about">About</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">C++ / 数据结构</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-07-28</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/learn/">learn</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/learn/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="哈希表（散列表）"><a href="#哈希表（散列表）" class="headerlink" title="哈希表（散列表）"></a>哈希表（散列表）</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><ul>
 <li><blockquote>
 <p>哈希表是一种数据结构。一种<strong>Value数据内容</strong>和<strong>Key数据存放地址</strong>之间的<strong>映射关系</strong>。</p>
 </blockquote>
@@ -20,18 +20,18 @@
 <p><img src="/pictures/clipboard74.png" alt="img"></p>
 <h3 id="2-作用以及优点和缺点"><a href="#2-作用以及优点和缺点" class="headerlink" title="2.作用以及优点和缺点"></a>2.作用以及优点和缺点</h3><ul>
 <li><blockquote>
-<p>我们需要一种快速寻址，插入删除方便的数据结构。</p>
+<p>我们需要一种<strong>快速寻址</strong>，<strong>插入删除方便</strong>的数据结构。</p>
 </blockquote>
 </li>
-<li>数组是内存中的连续空间，寻址快速，插入删除困难。</li>
-<li>链表是内存中不连续的空间，寻址困难，插入删除快速。</li>
+<li>数组是内存中的连续空间，<strong>寻址快速，插入删除困难</strong>。</li>
+<li>链表是内存中不连续的空间，<strong>寻址困难，插入删除快速</strong>。</li>
 <li><strong>而哈希表是一种快速寻址，插入删除容易的数据结构。</strong></li>
 </ul>
 <h4 id="优点和缺点"><a href="#优点和缺点" class="headerlink" title="优点和缺点"></a>优点和缺点</h4><ul>
 <li>优点：一对一查找高效 O(1)</li>
-<li>缺点：散列函数的定义，一个Key对应多个散列地址</li>
+<li>缺点：散列函数定义困难，散列冲突</li>
 <li>散列冲突：不同关键字，返回同个散列地址，散列函数定义困难<ul>
-<li>优秀的散列函数  =   计算简单  +分布均匀</li>
+<li>优秀的散列函数  =   计算简单  + 分布均匀</li>
 </ul>
 </li>
 </ul>
@@ -42,8 +42,8 @@
 </li>
 </ul>
 <ol>
-<li>开放寻址法：当发现散列冲突后，按着顺序往下查找空余位置存放数据。简单来说就是进行二次探测。</li>
-<li>链表法：在同一个Key对应的位置使用链表，从而达到存放多个数据的目的</li>
+<li><strong>开放寻址法</strong>：当发现散列冲突后，按着顺序往下查找空余位置存放数据。简单来说就是进行<strong>二次探测</strong>。</li>
+<li><strong>链表法</strong>：在同一个Key对应的位置使用链表，从而达到存放多个数据的目的</li>
 </ol>
 <h3 id="3-应用"><a href="#3-应用" class="headerlink" title="3.应用"></a>3.应用</h3><ol>
 <li><strong>安全领域的加密算法</strong>：把一些不同长度的信息转化为杂乱128位的编码，编码值叫Hash值。</li>
@@ -183,7 +183,7 @@
 </li>
 </ul>
 <p><img src="/pictures/clipboard82.png" alt="img"></p>
-<h3 id="2-红黑树的旋转-颜色（插入）"><a href="#2-红黑树的旋转-颜色（插入）" class="headerlink" title="2.红黑树的旋转_颜色（插入）"></a>2.红黑树的旋转_颜色（插入）</h3><ul>
+<h3 id="2-红黑树的旋转后、重新着色（插入）"><a href="#2-红黑树的旋转后、重新着色（插入）" class="headerlink" title="2.红黑树的旋转后、重新着色（插入）"></a>2.红黑树的旋转后、重新着色（插入）</h3><ul>
 <li><blockquote>
 <p>旋转较少，维护比较容易</p>
 </blockquote>
@@ -230,8 +230,8 @@
 <h2 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h2><h3 id="1-特点：可以存放更过元素，层数更低"><a href="#1-特点：可以存放更过元素，层数更低" class="headerlink" title="1.特点：可以存放更过元素，层数更低"></a>1.特点：可以存放更过元素，层数更低</h3><h3 id="2-定义——H树的阶数"><a href="#2-定义——H树的阶数" class="headerlink" title="2.定义——H树的阶数"></a>2.定义——H树的阶数</h3><ol>
 <li>满足二叉搜索树</li>
 <li>叶子节点同层</li>
-<li><strong>所有节点的子节点数</strong>（left、right） 【2 ， H】，即<strong>索引指针</strong></li>
-<li><strong>枝节点的关键字数量</strong>（Value）：【 ( H + 1 &gt;&gt; 1) - 1，H - 1 】(除叶子)</li>
+<li><strong>节点数的索引指针</strong>（left、right） 【2 ， H】，即<strong>索引指针</strong></li>
+<li><strong>枝节点的关键字数量</strong>（Value）：【ceil(H/2) - 1，H - 1】(叶子无限制)</li>
 </ol>
 <ul>
 <li><p>子节点：除了叶子的（left、right）</p>
@@ -253,7 +253,7 @@
 <p>当我们树的高度H = 5时</p>
 </blockquote>
 </li>
-<li><p>left/right数量——[2,3]——子节点</p>
+<li><p>left/right数量——[2,5]——索引指针（肯定比Value数量+1）</p>
 </li>
 <li><p>value数量——[2,4]——枝节点</p>
 </li>
@@ -294,16 +294,16 @@
 <li>B树的升级版本，更加充分的利用节点的空间</li>
 </ul>
 <h3 id="2-定义-1"><a href="#2-定义-1" class="headerlink" title="2.定义"></a>2.定义</h3><ol>
-<li>只有叶子节点保存Value值，其他节点只进行数据索引<ul>
+<li>叶子节点保存Value值，其他节点只进行数据索引<ul>
 <li>非叶子节点可保存的数据量大大增加</li>
 <li>所有查询时间相同</li>
 </ul>
 </li>
-<li>叶子节点Value值按顺序保存，同时保存右边节点指针<ul>
-<li>类似顺序链表，首尾相连，便于查询数据</li>
+<li>叶子节点Value值按顺序保存，同时底层叶子节点保存右边节点指针<ul>
+<li>类似顺序链表，首尾相连，便于区域数据的查询</li>
 </ul>
 </li>
-<li>Value值和索引指针数量相同</li>
+<li>Value值和索引指针数量相同，而B树索引指针数量 = Value值数量 + 1</li>
 </ol>
 <ul>
 <li><blockquote>
@@ -397,7 +397,7 @@
 </blockquote>
 </li>
 <li>B树的升级版本，只有叶子节点保存Value值，其他节点只进行数据索引</li>
-<li>底层链表相连，节点Value值和索引指针一一对应。</li>
+<li>底层链表相连，枝节点Value值和索引指针一一对应。</li>
 <li><strong>特点</strong>：查询时间稳定，同时<strong>枝节点可以保存更多的节点信息</strong>，层数降低。<strong>底层有序链表，查询区间数据更便捷</strong>。</li>
 </ul>
 <hr>
@@ -430,7 +430,7 @@
 </ul>
 <ol>
 <li>他是一棵二叉搜索树，同时满足高度定理。就是所有节点的子树高度差不大于1。</li>
-<li>插入和删除的时间复杂度都是O（log2n），由于其高度平衡，随意维护成本很高，一直需要旋转，从而满足平衡二叉树结构。<ul>
+<li>插入和删除的时间复杂度都是O（log2n），由于其高度平衡，所以维护成本很高，一直需要旋转，从而满足平衡二叉树结构。<ul>
 <li>主要有四种旋转LL、RR、LR、RL旋转。</li>
 </ul>
 </li>
@@ -438,7 +438,7 @@
 <hr>
 <ul>
 <li><blockquote>
-<p>红黑树,简称RB树，他的节点不是黑色就是红色。</p>
+<p>红黑树,简称RB树，是一棵加了颜色信息的二叉树。</p>
 </blockquote>
 </li>
 </ul>
@@ -456,6 +456,9 @@
 <li>1.父亲为黑直接满足</li>
 <li>2.父亲为红，那么爷爷肯定为黑，我们只需要讨论叔叔节点即可。</li>
 </ul>
+<ol start="2">
+<li>旋转主要有左旋和右旋，最多旋转三次，就能恢复红黑树的性质。</li>
+</ol>
 <hr>
 <ul>
 <li><blockquote>
