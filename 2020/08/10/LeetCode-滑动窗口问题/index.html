@@ -1,0 +1,400 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="LeetCode  / 滑动窗口问题"><meta name="keywords" content=""><meta name="author" content="Inter"><meta name="copyright" content="Inter"><title>LeetCode  / 滑动窗口问题 | Zichuan365' Blog</title><link rel="shortcut icon" href="/22.jpg"><link rel="stylesheet" href="/css/index.css?version=1.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.7.0"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script src="https://v1.hitokoto.cn/?encode=js&amp;charset=utf-8&amp;select=.footer_custom_text" defer></script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  }
+} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#滑动窗口问题"><span class="toc-number">1.</span> <span class="toc-text">滑动窗口问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#424-替换后的最长重复字符"><span class="toc-number">2.</span> <span class="toc-text">424.替换后的最长重复字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-无重复字符的最长子串"><span class="toc-number">3.</span> <span class="toc-text">3. 无重复字符的最长子串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#76-最小覆盖子串-困难"><span class="toc-number">4.</span> <span class="toc-text">76. 最小覆盖子串(困难)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#239-滑动窗口最大值（时间复杂度要求）"><span class="toc-number">5.</span> <span class="toc-text">239. 滑动窗口最大值（时间复杂度要求）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#438-找到字符串中所有字母异位词（固定窗口）"><span class="toc-number">6.</span> <span class="toc-text">438. 找到字符串中所有字母异位词（固定窗口）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#480-滑动窗口中位数（困难—不会）"><span class="toc-number">7.</span> <span class="toc-text">480. 滑动窗口中位数（困难—不会）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#567-字符串的排列（固定窗口—438一样）"><span class="toc-number">8.</span> <span class="toc-text">567.字符串的排列（固定窗口—438一样）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#992-K个不同整数的子数组"><span class="toc-number">9.</span> <span class="toc-text">992. K个不同整数的子数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#995-K-连续位的最小翻转次数（类似翻金币）（困难不会）"><span class="toc-number">10.</span> <span class="toc-text">995. K 连续位的最小翻转次数（类似翻金币）（困难不会）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#978-最长湍流子数组"><span class="toc-number">11.</span> <span class="toc-text">978. 最长湍流子数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1040-移动石子直到连续Ⅱ"><span class="toc-number">12.</span> <span class="toc-text">1040.移动石子直到连续Ⅱ</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1052-爱生气的书店老板"><span class="toc-number">13.</span> <span class="toc-text">1052.爱生气的书店老板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1074-元素和为目标值的子矩阵数量"><span class="toc-number">14.</span> <span class="toc-text">1074.元素和为目标值的子矩阵数量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1208-尽可能使字符串相等"><span class="toc-number">15.</span> <span class="toc-text">1208.尽可能使字符串相等</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/22.jpg"></div><div class="author-info__name text-center">Inter</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">27</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">3</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">33</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" href="https://blog.csdn.net/Kano365" target="_blank" rel="noopener">CSDN</a><a class="author-info-links__name text-center" href="https://leetcode-cn.com/problemset/all/" target="_blank" rel="noopener">Leetcode</a><a class="author-info-links__name text-center" href="https://leetcode-cn.com/problemset/lcof/" target="_blank" rel="noopener">Offer68</a><a class="author-info-links__name text-center" href="https://space.bilibili.com/3007680" target="_blank" rel="noopener">Bilibili</a><a class="author-info-links__name text-center" href="https://www.baidu.com/" target="_blank" rel="noopener">Baidu</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/6.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Zichuan365' Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/gallery">Gallery</a><a class="site-page" href="/about">About</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">LeetCode  / 滑动窗口问题</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-08-10</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/LeetCode/">LeetCode</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/LeetCode/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E9%97%AE%E9%A2%98/">滑动窗口问题</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="滑动窗口问题"><a href="#滑动窗口问题" class="headerlink" title="滑动窗口问题"></a>滑动窗口问题</h2><p><font size=6> 求解的是连续子集问题</font> </p>
+<ul>
+<li><blockquote>
+<p>优秀博文：<a href="https://blog.csdn.net/qq_43152052/article/details/102840715" target="_blank" rel="noopener">https://blog.csdn.net/qq_43152052/article/details/102840715</a></p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>①窗口由两个指针构成，一个左指针left，一个右指针right，然后[left,right]表示的索引范围是一个窗口了。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>②右指针right的功能是用来扩展窗口：当窗口内的条件没有达到题目要求时，我们需要不断移动右指针right直到窗口内的条件第一次满足题目要求为止。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>③左指针left的功能是用来缩小窗口的：当窗口内的条件已满足题目条件或多于题目条件时（窗口溢出），我们缩小窗口，也就是左指针left需要右移直到窗口条件不满足为止。这时，我们需要记录当前窗口的大小，并更新目前为止满足条件的最小窗口记录。之后，再次扩展右指针right，使得窗口满足题目的条件。</p>
+</blockquote>
+</li>
+</ul>
+<p><font size=6> 固定套路</font> </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> left = <span class="number">0</span>，res = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> tiaojian = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//满足情况：扩大右指针</span></span><br><span class="line"><span class="comment">//不满足情况：移动左值针，缩小范围</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;arr.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="424-替换后的最长重复字符"><a href="#424-替换后的最长重复字符" class="headerlink" title="424.替换后的最长重复字符"></a>424.替换后的最长重复字符</h2><ul>
+<li><blockquote>
+<p>给你一个仅由大写英文字母组成的字符串，你可以将任意位置上的字符替换成另外的字符，总共可最多替换 k 次。在执行上述操作后，找到包含重复字母的最长子串的长度。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>输入:</p>
+</blockquote>
+</li>
+<li><p>s = “ABAB”, k = 2</p>
+</li>
+<li><p>输出:</p>
+</li>
+<li><p>4</p>
+</li>
+<li><blockquote>
+<p>输入:</p>
+</blockquote>
+</li>
+<li><p>s = “AABABBA”, k = 1</p>
+</li>
+<li><p>输出:</p>
+</li>
+<li><p>4</p>
+</li>
+<li><blockquote>
+<p>解题：</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>滑动窗口范围内的数字替换成<strong>区间内数最多的数</strong></li>
+<li>所以定义变量maxNum为当前区间数量最多的那个数</li>
+<li>当不满足情况的时候，左值针移动，利用辅助数组vector<int>ABC(26,0);</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">characterReplacement</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vis(<span class="number">26</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">int</span> left = <span class="number">0</span>, res = <span class="number">0</span>, numSize = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//numSize当前窗口中数量最多的数    </span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		vis[s[i] - <span class="string">'A'</span>]++;</span><br><span class="line">		numSize = <span class="built_in">max</span>(vis[s[i] - <span class="string">'A'</span>], numSize);</span><br><span class="line">		<span class="comment">//i - left + 1当前区间所有元素数量</span></span><br><span class="line">		<span class="keyword">while</span> (i - left + <span class="number">1</span> - numSize &gt; k) &#123;</span><br><span class="line">			vis[s[left] - <span class="string">'A'</span>]--;</span><br><span class="line">			left++;</span><br><span class="line">		&#125;</span><br><span class="line">		res = <span class="built_in">max</span>(res, i - left + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="3-无重复字符的最长子串"><a href="#3-无重复字符的最长子串" class="headerlink" title="3. 无重复字符的最长子串"></a>3. 无重复字符的最长子串</h2><ul>
+<li><blockquote>
+<p>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>输入: “abcabcbb”</p>
+</blockquote>
+</li>
+<li><p>输出: 3 </p>
+</li>
+<li><p>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。</p>
+</li>
+<li><blockquote>
+<p>输入: “bbbbb”</p>
+</blockquote>
+</li>
+<li><p>输出: 1</p>
+</li>
+<li><p>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。</p>
+</li>
+<li><blockquote>
+<p>解题：只有可能是新添加进来的那个数字，出现重复数字。</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">characterReplacement</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vis(<span class="number">26</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">int</span> left = <span class="number">0</span>, res = <span class="number">0</span>, numSize = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//numSize当前窗口中数量最多的数    </span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		vis[s[i] - <span class="string">'A'</span>]++;</span><br><span class="line">		numSize = <span class="built_in">max</span>(vis[s[i] - <span class="string">'A'</span>], numSize);</span><br><span class="line">		<span class="comment">//i - left + 1当前区间所有元素数量</span></span><br><span class="line">		<span class="keyword">while</span> (i - left + <span class="number">1</span> - numSize &gt; k) &#123;</span><br><span class="line">			vis[s[left] - <span class="string">'A'</span>]--;</span><br><span class="line">			left++;</span><br><span class="line">		&#125;</span><br><span class="line">		res = <span class="built_in">max</span>(res, i - left + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="76-最小覆盖子串-困难"><a href="#76-最小覆盖子串-困难" class="headerlink" title="76. 最小覆盖子串(困难)"></a>76. 最小覆盖子串(困难)</h2><ul>
+<li><blockquote>
+<p>给你一个字符串 S、一个字符串 T 。请你设计一种算法，可以在 O(n) 的时间复杂度内，从字符串 S 里面找出：包含 T 所有字符的最小子串。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>输入：S = “ADOBECODEBANC”, T = “ABC”</p>
+</blockquote>
+</li>
+<li><p>输出：”BANC”</p>
+</li>
+<li><blockquote>
+<p>解题：滑动窗口</p>
+</blockquote>
+</li>
+<li><p>需要判断的主要是满不满足T中的字符数量，使用vector<int>vis,和match来双重判断</p>
+</li>
+<li><p>满足数量match++</p>
+</li>
+<li><p>当产生数量变化match–</p>
+</li>
+<li><p>只有当vis[i] == vis[need]才进行match++，保证了match不会出现大于其max的情况</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">minWindow</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> t)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> left = <span class="number">0</span>, len = INT_MAX, leftres = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">string</span> resString;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vis(<span class="number">256</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;need(<span class="number">256</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> it : t)</span><br><span class="line">		vis[it]++;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> matchSuccess = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> it : vis) &#123;</span><br><span class="line">		<span class="keyword">if</span> (it != <span class="number">0</span>)</span><br><span class="line">			matchSuccess++;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> match = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		<span class="keyword">char</span> tempR = s[i];</span><br><span class="line">		<span class="keyword">if</span> (vis[tempR] &gt; <span class="number">0</span>) &#123;  <span class="comment">//这个数是需要的</span></span><br><span class="line">			need[tempR]++;</span><br><span class="line">			<span class="keyword">if</span> (need[tempR] == vis[tempR])</span><br><span class="line">				match++;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (match == matchSuccess) &#123;</span><br><span class="line">			<span class="keyword">char</span> tempL = s[left];</span><br><span class="line">			<span class="keyword">if</span> (vis[tempL] &lt;= <span class="number">0</span>)</span><br><span class="line">				left++;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				need[tempL]--;</span><br><span class="line">				left++;</span><br><span class="line">				<span class="keyword">if</span> (need[tempL] &lt; vis[tempL]) &#123;<span class="comment">//match不匹配了需要恢复</span></span><br><span class="line">					need[tempL]++;</span><br><span class="line">					left--;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (match == matchSuccess &amp;&amp; i - left + <span class="number">1</span> &lt; len) &#123;</span><br><span class="line">			leftres = left;</span><br><span class="line">			len = i - left + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> len == INT_MAX ? <span class="string">""</span> : s.substr(leftres, len);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="239-滑动窗口最大值（时间复杂度要求）"><a href="#239-滑动窗口最大值（时间复杂度要求）" class="headerlink" title="239. 滑动窗口最大值（时间复杂度要求）"></a>239. 滑动窗口最大值（时间复杂度要求）</h2><ul>
+<li><blockquote>
+<p>给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。</p>
+</blockquote>
+</li>
+<li><p>返回滑动窗口中的最大值。</p>
+</li>
+<li><blockquote>
+<p>题目：</p>
+</blockquote>
+</li>
+<li><p>输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3</p>
+</li>
+<li><p>输出: [3,3,5,5,6,7] </p>
+</li>
+<li><p>解释: </p>
+</li>
+<li><p>滑动窗口的位置       —–          最大值</p>
+</li>
+<li><p>[1  3  -1] -3  5  3  6  7     —–   3</p>
+</li>
+<li><p>1 [3  -1  -3] 5  3  6  7     —–   3</p>
+</li>
+<li><p>1  3 [-1  -3  5] 3  6  7     —–   5</p>
+</li>
+<li><p>1  3  -1 [-3  5  3] 6  7     —–   5</p>
+</li>
+<li><p>1  3  -1  -3 [5  3  6] 7     —–   6</p>
+</li>
+<li><p>1  3  -1  -3  5 [3  6  7]    —–   7</p>
+</li>
+<li><blockquote>
+<p>解题：</p>
+</blockquote>
+</li>
+<li><p>利用双向队列的堆栈特性</p>
+</li>
+<li><p>pop_back()\ pop_front() \ push_back()\ push_front()\ A.front()\ A.back()</p>
+<ul>
+<li>头部保存最大元素</li>
+<li>利用<strong>存放元素下标</strong>来保证没有超出区间的范围</li>
+<li>每次比较和尾部数据进行比较，从而保证前面节点：老元素。后面节点：新元素。这样可以完成上一条。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">maxSlidingWindow</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (nums.<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;res;</span><br><span class="line">	<span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt;<span class="built_in">deque</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//头部:max数据</span></span><br><span class="line">	<span class="comment">//尾部比较，然后淘汰元素:保证了老元素前,新元素后</span></span><br><span class="line">	<span class="comment">//元素下标,保证区间范围</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!<span class="built_in">deque</span>.empty() &amp;&amp; i - <span class="built_in">deque</span>.front() &gt;= k)</span><br><span class="line">			<span class="built_in">deque</span>.pop_front();</span><br><span class="line">		<span class="keyword">while</span> (!<span class="built_in">deque</span>.empty() &amp;&amp; nums[i] &gt; nums[<span class="built_in">deque</span>.back()])</span><br><span class="line">			<span class="built_in">deque</span>.pop_back();</span><br><span class="line">		<span class="comment">//这里忘记了</span></span><br><span class="line">		<span class="built_in">deque</span>.push_back(i);</span><br><span class="line">		<span class="comment">//这里忘记了</span></span><br><span class="line">		<span class="keyword">if</span> (i - k + <span class="number">1</span> &gt;= <span class="number">0</span>)</span><br><span class="line">			res.push_back(nums[<span class="built_in">deque</span>.front()]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="438-找到字符串中所有字母异位词（固定窗口）"><a href="#438-找到字符串中所有字母异位词（固定窗口）" class="headerlink" title="438. 找到字符串中所有字母异位词（固定窗口）"></a>438. 找到字符串中所有字母异位词（固定窗口）</h2><ul>
+<li><blockquote>
+<p>给定一个字符串 s 和一个非空字符串 p，找到 s 中所有是 p 的字母异位词的子串，返回这些子串的起始索引。</p>
+</blockquote>
+</li>
+<li><p>字符串只包含小写英文字母，并且字符串 s 和 p 的长度都不超过 20100。</p>
+</li>
+</ul>
+<ul>
+<li><blockquote>
+<p>题目：</p>
+</blockquote>
+</li>
+<li><p>输入: s: “cbaebabacd” p: “abc”</p>
+</li>
+<li><p>输出: [0, 6]</p>
+</li>
+<li><p>输入:s: “abab” p: “ab”</p>
+</li>
+<li><p>[0, 1, 2]</p>
+</li>
+<li><blockquote>
+<p>解题固定窗口，求是否满足</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">findAnagrams</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> p)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (p.<span class="built_in">size</span>() &gt; s.<span class="built_in">size</span>())</span><br><span class="line">		<span class="keyword">return</span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//连续的子串</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vis(<span class="number">256</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;need(<span class="number">256</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;res;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> it : p)</span><br><span class="line">		vis[it]++;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> H = p.<span class="built_in">size</span>();</span><br><span class="line">	<span class="comment">//固定长度的滑动窗口</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i &lt; H) &#123;</span><br><span class="line">			need[s[i]]++;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (vis == need)</span><br><span class="line">			res.push_back(left);</span><br><span class="line"></span><br><span class="line">		need[s[i]]++;</span><br><span class="line">		need[s[left++]]--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (vis == need)</span><br><span class="line">		res.push_back(left);</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="480-滑动窗口中位数（困难—不会）"><a href="#480-滑动窗口中位数（困难—不会）" class="headerlink" title="480. 滑动窗口中位数（困难—不会）"></a>480. 滑动窗口中位数（困难—不会）</h2><ul>
+<li><blockquote>
+<p>中位数是有序序列最中间的那个数。如果序列的大小是偶数，则没有最中间的数；此时中位数是最中间的两个数的平均数。</p>
+</blockquote>
+</li>
+<li><p>[2,3,4]，中位数是 3</p>
+</li>
+<li><p>[2,3]，中位数是 (2 + 3) / 2 = 2.5</p>
+</li>
+<li><p>给出 nums = [1,3,-1,-3,5,3,6,7]，以及 k = 3。</p>
+</li>
+</ul>
+<ul>
+<li><p>窗口位置                      中位数</p>
+</li>
+<li><p>[1  3  -1] -3  5  3  6  7   ————    1</p>
+</li>
+<li><p>1 [3  -1  -3] 5  3  6  7   ————    -1</p>
+</li>
+<li><p>1  3 [-1  -3  5] 3  6  7   ————    -1</p>
+</li>
+<li><p>1  3  -1 [-3  5  3] 6  7    ————    3</p>
+</li>
+<li><p>1  3  -1  -3 [5  3  6] 7    ————    5</p>
+</li>
+<li><p>1  3  -1  -3  5 [3  6  7]   ————    6</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; <span class="title">medianSlidingWindow</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> nums_size = nums.<span class="built_in">size</span>();</span><br><span class="line">	<span class="function"><span class="built_in">multiset</span>&lt;<span class="keyword">int</span>&gt; <span class="title">window</span><span class="params">(nums.<span class="built_in">begin</span>(), nums.<span class="built_in">begin</span>() + k)</span></span>;</span><br><span class="line">	<span class="comment">//mid即是high_p</span></span><br><span class="line">	<span class="built_in">multiset</span>&lt;<span class="keyword">int</span>&gt;::iterator mid = window.<span class="built_in">begin</span>();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k / <span class="number">2</span>; ++i)</span><br><span class="line">		++mid;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">double</span>&gt; ans;</span><br><span class="line">	ans.reserve(nums_size - k + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = k;; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (k % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">multiset</span>&lt;<span class="keyword">int</span>&gt;::iterator low_p = prev(mid, <span class="number">1</span>);</span><br><span class="line">			ans.push_back(((<span class="keyword">double</span>)*low_p + *mid) / <span class="number">2.0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			ans.push_back(*mid);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (i == nums_size)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		window.insert(nums.at(i));</span><br><span class="line">		<span class="keyword">if</span> (nums.at(i) &lt; *mid)</span><br><span class="line">			--mid;</span><br><span class="line">		<span class="keyword">if</span> (nums.at(i - k) &lt;= *mid)</span><br><span class="line">			++mid;</span><br><span class="line">		window.erase(window.<span class="built_in">find</span>(nums.at(i - k)));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="567-字符串的排列（固定窗口—438一样）"><a href="#567-字符串的排列（固定窗口—438一样）" class="headerlink" title="567.字符串的排列（固定窗口—438一样）"></a>567.字符串的排列（固定窗口—438一样）</h2><ul>
+<li><blockquote>
+</blockquote>
+</li>
+<li><p>给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的排列。</p>
+</li>
+<li><p>换句话说，第一个字符串的排列之一是第二个字符串的子串。</p>
+</li>
+<li><blockquote>
+<p>输入: s1 = “ab” s2 = “eidbaooo”</p>
+</blockquote>
+</li>
+<li><p>输出: True</p>
+</li>
+<li><p>解释: s2 包含 s1 的排列之一 (“ba”).</p>
+</li>
+<li><blockquote>
+<p>输入: s1= “ab” s2 = “eidboaoo”</p>
+</blockquote>
+</li>
+<li><p>输出: False</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">checkInclusion</span><span class="params">(<span class="built_in">string</span> s1, <span class="built_in">string</span> s2)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (s1.<span class="built_in">size</span>() &gt; s2.<span class="built_in">size</span>())</span><br><span class="line">		<span class="keyword">return</span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//连续的子串</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vis(<span class="number">256</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;need(<span class="number">256</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> it : s1)</span><br><span class="line">		vis[it]++;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> H = s1.<span class="built_in">size</span>();</span><br><span class="line">	<span class="comment">//固定长度的滑动窗口</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s2.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (i &lt; H) &#123;</span><br><span class="line">			need[s2[i]]++;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (vis == need)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">		need[s2[i]]++;</span><br><span class="line">		need[s2[left++]]--;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (vis == need)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="992-K个不同整数的子数组"><a href="#992-K个不同整数的子数组" class="headerlink" title="992. K个不同整数的子数组"></a>992. K个不同整数的子数组</h2><ul>
+<li><blockquote>
+<p>给定一个正整数数组 A，如果 A 的某个子数组中不同整数的个数恰好为 K，则称 A 的这个连续、不一定独立的子数组为好子数组。</p>
+</blockquote>
+</li>
+<li><p>（例如，[1,2,3,1,2] 中有 3 个不同的整数：1，2，以及 3。）</p>
+</li>
+<li><p>返回 A 中好子数组的数目。</p>
+</li>
+<li><blockquote>
+<p>输入：A = [1,2,1,2,3], K = 2</p>
+</blockquote>
+</li>
+<li><p>输出：7</p>
+</li>
+<li><p>解释：恰好由 2 个不同整数组成的子数组：[1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,2].</p>
+</li>
+<li><blockquote>
+<p>输入：A = [1,2,1,3,4], K = 3</p>
+</blockquote>
+</li>
+<li><p>输出：3</p>
+</li>
+<li><p>解释：恰好由 3 个不同整数组成的子数组：[1,2,1,3], [2,1,3], [1,3,4].</p>
+</li>
+<li><blockquote>
+<p>采用unordered_map&lt;int,int&gt;来统计,</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">subarraysWithKDistinct</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (K == <span class="number">0</span> || A.empty())</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;vis;</span><br><span class="line">	<span class="keyword">int</span> left = <span class="number">0</span>, res = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		vis[A[i]]++;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span> (vis.<span class="built_in">size</span>() &gt; K) &#123;</span><br><span class="line">			<span class="keyword">if</span> (vis[A[left]] &gt; <span class="number">1</span>)</span><br><span class="line">				vis[A[left]]--;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				vis.erase(A[left]);</span><br><span class="line"></span><br><span class="line">			left++;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> tempL = left;<span class="comment">//当前的左指针位置,然后右移看子集有没有满足要求的</span></span><br><span class="line">		<span class="keyword">while</span> (vis.<span class="built_in">size</span>() == K) &#123;</span><br><span class="line">			res++;</span><br><span class="line">			<span class="keyword">if</span> (vis[A[left]] &gt; <span class="number">1</span>)</span><br><span class="line">				vis[A[left]]--;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				vis.erase(A[left]);</span><br><span class="line"></span><br><span class="line">			left++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//还原</span></span><br><span class="line">		<span class="keyword">while</span> (left &gt; tempL) &#123;</span><br><span class="line"></span><br><span class="line">			vis[A[left - <span class="number">1</span>]]++;</span><br><span class="line">			left--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="995-K-连续位的最小翻转次数（类似翻金币）（困难不会）"><a href="#995-K-连续位的最小翻转次数（类似翻金币）（困难不会）" class="headerlink" title="995. K 连续位的最小翻转次数（类似翻金币）（困难不会）"></a>995. K 连续位的最小翻转次数（类似翻金币）（困难不会）</h2><ul>
+<li><blockquote>
+<p>在仅包含 0 和 1 的数组 A 中，一次 K 位翻转包括选择一个长度为 K 的（连续）子数组，同时将子数组中的每个 0 更改为 1，而每个 1 更改为 0。</p>
+</blockquote>
+</li>
+<li><p>返回所需的 K 位翻转的次数，以便数组没有值为 0 的元素。如果不可能，返回 -1。</p>
+</li>
+<li><blockquote>
+<p>输入：A = [0,1,0], K = 1</p>
+</blockquote>
+</li>
+<li><p>输出：2</p>
+</li>
+<li><p>解释：先翻转 A[0]，然后翻转 A[2]。</p>
+</li>
+</ul>
+<ul>
+<li><blockquote>
+<p>输入：A = [1,1,0], K = 2</p>
+</blockquote>
+</li>
+<li><p>输出：-1</p>
+</li>
+<li><p>解释：无论我们怎样翻转大小为 2 的子数组，我们都不能使数组变为 [1,1,1]。</p>
+</li>
+<li><blockquote>
+<p>输入：A = [0,0,0,1,0,1,1,0], K = 3</p>
+</blockquote>
+</li>
+<li><p>输出：3</p>
+</li>
+<li><p>解释：</p>
+</li>
+<li><p>翻转 A[0],A[1],A[2]: A变成 [1,1,1,1,0,1,1,0]</p>
+</li>
+<li><p>翻转 A[4],A[5],A[6]: A变成 [1,1,1,1,1,0,0,0]</p>
+</li>
+<li><p>翻转 A[5],A[6],A[7]: A变成 [1,1,1,1,1,1,1,1]</p>
+</li>
+<li><blockquote>
+<p>利用队列</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">minKBitFlips</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (A.empty())<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> result = <span class="number">0</span>, N = A.<span class="built_in">size</span>();</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; window;<span class="comment">//window用来存放被反转元素的下标，window的长度表示反转的次数</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//当下标之间的距离大于k时，需要移除队头下标了</span></span><br><span class="line">		<span class="keyword">while</span> (!window.empty() &amp;&amp; window.front() + K &lt;= i)</span><br><span class="line">			window.pop();</span><br><span class="line"></span><br><span class="line">		<span class="comment">//当前位置的1反转奇数次为0，需要反转；当前位置的0反转偶数次还是为0，还是需要反转</span></span><br><span class="line">		<span class="keyword">if</span> (A[i] == window.<span class="built_in">size</span>() % <span class="number">2</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (i + K &gt; N)<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">			window.push(i);</span><br><span class="line">			result++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="978-最长湍流子数组"><a href="#978-最长湍流子数组" class="headerlink" title="978. 最长湍流子数组"></a>978. 最长湍流子数组</h2><ul>
+<li><blockquote>
+<p>数组的形式是升降升降升，这种形式</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>输入：[9,4,2,10,7,8,8,1,9]</p>
+</blockquote>
+</li>
+<li><p>输出：5</p>
+</li>
+<li><p>解释：(A[1] &gt; A[2] &lt; A[3] &gt; A[4] &lt; A[5])</p>
+</li>
+<li><blockquote>
+<p>题解：compare前后数据——遍历一遍数组</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span> A, <span class="keyword">int</span> B)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (A &gt; B) ? <span class="number">1</span> : (A == B) ? <span class="number">0</span> : <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxTurbulenceSize</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (A.<span class="built_in">size</span>() == <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; A.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> flag = compare(A[i - <span class="number">1</span>], A[i]);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (i == A.<span class="built_in">size</span>() - <span class="number">1</span> || flag * compare(A[i], A[i + <span class="number">1</span>]) != <span class="number">-1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span> (flag != <span class="number">0</span>)res = <span class="built_in">max</span>(res, i - left + <span class="number">1</span>);</span><br><span class="line">			left = i;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li><a href="https://blog.csdn.net/qq_43152052/article/details/102840715" target="_blank" rel="noopener">https://blog.csdn.net/qq_43152052/article/details/102840715</a><h2 id="1040-移动石子直到连续Ⅱ"><a href="#1040-移动石子直到连续Ⅱ" class="headerlink" title="1040.移动石子直到连续Ⅱ"></a>1040.移动石子直到连续Ⅱ</h2></li>
+<li><blockquote>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="1052-爱生气的书店老板"><a href="#1052-爱生气的书店老板" class="headerlink" title="1052.爱生气的书店老板"></a>1052.爱生气的书店老板</h2><ul>
+<li><blockquote>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="1074-元素和为目标值的子矩阵数量"><a href="#1074-元素和为目标值的子矩阵数量" class="headerlink" title="1074.元素和为目标值的子矩阵数量"></a>1074.元素和为目标值的子矩阵数量</h2><ul>
+<li><blockquote>
+</blockquote>
+</li>
+</ul>
+<hr>
+<h2 id="1208-尽可能使字符串相等"><a href="#1208-尽可能使字符串相等" class="headerlink" title="1208.尽可能使字符串相等"></a>1208.尽可能使字符串相等</h2><ul>
+<li><blockquote>
+</blockquote>
+</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Inter</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zichuan365.github.io/2020/08/10/LeetCode-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E9%97%AE%E9%A2%98/">https://zichuan365.github.io/2020/08/10/LeetCode-%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E9%97%AE%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zichuan365.github.io">Zichuan365' Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/08/11/Others-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"><i class="fa fa-chevron-left">  </i><span>Others / 博客搭建教程</span></a></div><div class="next-post pull-right"><a href="/2020/08/08/LeetCode-%E6%A0%91%E3%80%81%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/"><span>LeetCode  / 树、链表专题</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="vcomment"></div><script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var notify = 'false' == true ? true : false;
+var verify = 'false' == true ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'',
+  appKey:'',
+  placeholder:'Just go go',
+  avatar:'Inter',
+  guest_info:guest_info,
+  pageSize:'10',
+  lang: 'zh-cn'
+})</script></div></div><footer class="footer-bg" style="background-image: url(/img/6.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2019 - 2020 By Inter</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="footer_custom_text">hitokoto</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.7.0"></script><script src="/js/fancybox.js?version=1.7.0"></script><script src="/js/sidebar.js?version=1.7.0"></script><script src="/js/copy.js?version=1.7.0"></script><script src="/js/fireworks.js?version=1.7.0"></script><script src="/js/transition.js?version=1.7.0"></script><script src="/js/scroll.js?version=1.7.0"></script><script src="/js/head.js?version=1.7.0"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css"><script src="/js/katex.js"></script><script src="/js/search/local-search.js"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章"></div></div></div><hr><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div></body></html>
