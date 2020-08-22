@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://zuizichuan.cn/2020/07/10/hello-world/</loc>
+    
+    <lastmod>2020-08-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/2020/07/24/Directory-Record-1/</loc>
+    
+    <lastmod>2020-08-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/2020/07/19/baseC/</loc>
+    
+    <lastmod>2020-08-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://zuizichuan.cn/2020/08/22/%E7%94%9F%E6%B4%BB-%E6%84%9F%E6%A6%82/</loc>
     
     <lastmod>2020-08-22</lastmod>
@@ -72,20 +93,6 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/2020/07/24/Directory-Record-1/</loc>
-    
-    <lastmod>2020-08-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zuizichuan.cn/2020/07/10/hello-world/</loc>
-    
-    <lastmod>2020-08-19</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zuizichuan.cn/2020/08/18/LeetCode-%E5%9B%9E%E6%BA%AF%E6%B3%95/</loc>
     
     <lastmod>2020-08-19</lastmod>
@@ -131,13 +138,6 @@
     <loc>https://zuizichuan.cn/2020/07/24/C-%E6%95%B0%E6%8D%AE%E5%BA%93-1/</loc>
     
     <lastmod>2020-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://zuizichuan.cn/2020/07/19/baseC/</loc>
-    
-    <lastmod>2020-08-10</lastmod>
     
   </url>
   
@@ -291,27 +291,20 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/tags/BFS/</loc>
-    <lastmod>2020-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zuizichuan.cn/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://zuizichuan.cn/categories/learn/</loc>
+    <loc>https://zuizichuan.cn/tags/BFS/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
+  
+
   
   <url>
     <loc>https://zuizichuan.cn/categories/Directory/</loc>
@@ -321,7 +314,21 @@
   </url>
   
   <url>
+    <loc>https://zuizichuan.cn/categories/learn/</loc>
+    <lastmod>2020-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zuizichuan.cn/categories/LeetCode/</loc>
+    <lastmod>2020-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/categories/learn/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -342,28 +349,7 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/learn/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2020-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zuizichuan.cn/categories/Others/</loc>
-    <lastmod>2020-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zuizichuan.cn/categories/LeetCode/STL%E5%AE%B9%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2020-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zuizichuan.cn/categories/LeetCode/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -377,7 +363,7 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/LeetCode/%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://zuizichuan.cn/categories/LeetCode/STL%E5%AE%B9%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -391,7 +377,7 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/LeetCode/%E5%9B%9E%E6%BA%AF%E6%B3%95/</loc>
+    <loc>https://zuizichuan.cn/categories/%E5%89%91%E6%8C%87Offer/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -405,14 +391,7 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/%E5%89%91%E6%8C%87Offer/</loc>
-    <lastmod>2020-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zuizichuan.cn/categories/LeetCode/%E6%A0%91%E3%80%81%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/</loc>
+    <loc>https://zuizichuan.cn/categories/LeetCode/%E5%9B%9E%E6%BA%AF%E6%B3%95/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -433,42 +412,7 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/C/</loc>
-    <lastmod>2020-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zuizichuan.cn/categories/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2020-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zuizichuan.cn/categories/Others/ubuntu%E5%BC%80%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%BB%88%E7%AB%AF%E8%87%AA%E5%90%AF%E5%8A%A8/</loc>
-    <lastmod>2020-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zuizichuan.cn/categories/Others/ubuntu-GPIO%E8%A7%A6%E5%8F%91/</loc>
-    <lastmod>2020-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zuizichuan.cn/categories/LeetCode/97-%E4%BA%A4%E9%94%99%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
-    <lastmod>2020-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zuizichuan.cn/categories/%E9%A1%B9%E7%9B%AE/</loc>
+    <loc>https://zuizichuan.cn/categories/LeetCode/35-%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -482,14 +426,63 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/LeetCode/35-%E6%90%9C%E7%B4%A2%E6%8F%92%E5%85%A5%E4%BD%8D%E7%BD%AE/</loc>
+    <loc>https://zuizichuan.cn/categories/LeetCode/%E6%A0%91%E3%80%81%E9%93%BE%E8%A1%A8%E4%B8%93%E9%A2%98/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/Others/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://zuizichuan.cn/categories/LeetCode/97-%E4%BA%A4%E9%94%99%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <lastmod>2020-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2020-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/categories/LeetCode/%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2020-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/categories/C/</loc>
+    <lastmod>2020-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/categories/%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2020-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/categories/Others/ubuntu%E5%BC%80%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%BB%88%E7%AB%AF%E8%87%AA%E5%90%AF%E5%8A%A8/</loc>
+    <lastmod>2020-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/categories/LeetCode/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2020-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/categories/Others/ubuntu-GPIO%E8%A7%A6%E5%8F%91/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -503,7 +496,7 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/%E5%89%91%E6%8C%87Offer/26-47/</loc>
+    <loc>https://zuizichuan.cn/categories/Others/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -517,13 +510,6 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/%E5%89%91%E6%8C%87Offer/48-68/</loc>
-    <lastmod>2020-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://zuizichuan.cn/categories/%E5%89%91%E6%8C%87Offer/01-25/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
@@ -531,7 +517,14 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/C/%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%97%B6%E6%97%B6%E9%97%B4/</loc>
+    <loc>https://zuizichuan.cn/categories/%E5%89%91%E6%8C%87Offer/26-47/</loc>
+    <lastmod>2020-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/categories/%E5%89%91%E6%8C%87Offer/48-68/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -539,6 +532,13 @@
   
   <url>
     <loc>https://zuizichuan.cn/categories/%E7%94%9F%E6%B4%BB/%E9%9D%A2%E8%AF%95%E6%84%9F%E6%82%9F/</loc>
+    <lastmod>2020-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zuizichuan.cn/categories/C/%E8%8E%B7%E5%8F%96%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%97%B6%E6%97%B6%E9%97%B4/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -559,14 +559,14 @@
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/%E9%A1%B9%E7%9B%AE/%E6%B0%B4%E4%B8%8B%E7%AB%8B%E4%BD%93%E8%A7%86%E8%A7%89/</loc>
+    <loc>https://zuizichuan.cn/categories/%E9%A1%B9%E7%9B%AE/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://zuizichuan.cn/categories/%E9%A1%B9%E7%9B%AE/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
+    <loc>https://zuizichuan.cn/categories/%E9%A1%B9%E7%9B%AE/%E6%B0%B4%E4%B8%8B%E7%AB%8B%E4%BD%93%E8%A7%86%E8%A7%89/</loc>
     <lastmod>2020-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
