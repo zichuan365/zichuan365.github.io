@@ -20,16 +20,29 @@
 </blockquote>
 </li>
 <li>必须增添head的前节点，否则m = 1无法完成反转</li>
-</ul>
+<li><blockquote>
+<p>辅助节点<strong>pre是不会变化的</strong>，head和next不动，在交换的过程中变化</p>
+</blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">reverseBetween</span><span class="params">(ListNode* head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//1.增添前节点，保证m = 1可以使用</span></span><br><span class="line">   ListNode* newNode = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">	newNode-&gt;next = head;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2.找到反转的前一个节点，所以i = 1初始</span></span><br><span class="line">	ListNode* pre = vis;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++)</span><br><span class="line">		pre = pre-&gt;next;</span><br><span class="line">        </span><br><span class="line">	<span class="comment">//比如1-&gt;2-&gt;3-&gt;4-&gt;5,m=1,n=5</span></span><br><span class="line">	<span class="comment">//第一次反转：1(head) 2(next) 3 4 5 反转为 2 1 3 4 5</span></span><br><span class="line">	<span class="comment">//第二次反转：2 1(head) 3(next) 4 5 反转为 3 2 1 4 5</span></span><br><span class="line">	<span class="comment">//第三次发转：3 2 1(head) 4(next) 5 反转为 4 3 2 1 5</span></span><br><span class="line">	<span class="comment">//第四次反转：4 3 2 1(head) 5(next) 反转为 5 4 3 2 1</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//通过两个辅助指针,更新next指针，实现链表的反转</span></span><br><span class="line">   <span class="comment">//pre、head、next</span></span><br><span class="line">	head = pre-&gt;next;</span><br><span class="line">	ListNode* next = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = m; i &lt; n; i++) &#123;</span><br><span class="line">		next = head-&gt;next;</span><br><span class="line">		head-&gt;next = next-&gt;next;</span><br><span class="line">		next-&gt;next = pre-&gt;next;</span><br><span class="line">		pre-&gt;next = next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> newNode-&gt;next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <hr>
 <h3 id="3-反转链表（相邻节点）"><a href="#3-反转链表（相邻节点）" class="headerlink" title="3.反转链表（相邻节点）"></a>3.反转链表（相邻节点）</h3><ul>
 <li><blockquote>
 <p>利用辅助指针</p>
 </blockquote>
 </li>
+<li><p>给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。</p>
+</li>
+<li><p>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</p>
+</li>
+<li><blockquote>
+<p>案列：- 给定 1-&gt;2-&gt;3-&gt;4, 你应该返回 2-&gt;1-&gt;4-&gt;3.</p>
+</blockquote>
+</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">reverseBetween</span><span class="params">(ListNode* head, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+<p><img src="/pictures/clipboard113.png" alt="img"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">swapPairs</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">	ListNode* newHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">	newHead-&gt;next = head;</span><br><span class="line"></span><br><span class="line">	ListNode* cur = newHead;</span><br><span class="line">	<span class="keyword">while</span> (cur-&gt;next &amp;&amp; cur-&gt;next-&gt;next) &#123;</span><br><span class="line">		ListNode* first = cur-&gt;next;</span><br><span class="line">		ListNode* second = cur-&gt;next-&gt;next;</span><br><span class="line"></span><br><span class="line">		cur-&gt;next = second;</span><br><span class="line">		first-&gt;next = second-&gt;next;</span><br><span class="line">		second-&gt;next = first;</span><br><span class="line">		cur = cur-&gt;next-&gt;next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> newHead-&gt;next;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="4-无序链表排序"><a href="#4-无序链表排序" class="headerlink" title="4.无序链表排序"></a>4.无序链表排序</h3><ul>
 <li><blockquote>
 <p>时间复杂度O（nlogn）</p>
@@ -55,11 +68,9 @@
 <p>解法：</p>
 </blockquote>
 <ul>
-<li>1.都不是环形<ul>
-<li>2.一个环一个不是环</li>
-<li>3.都是环</li>
-</ul>
-</li>
+<li>1.都不是环形（走A+C+B = B+C+A）</li>
+<li>2.一个环一个不是环（无交点）</li>
+<li>3.都是环（快慢指针分别找到一个随机点p1、p2。p1往前走能遇到p2有交点）</li>
 </ul>
 </li>
 </ul>
