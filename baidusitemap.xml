@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zuizichuan.cn/2020/08/24/LeetCode-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
+    <lastmod>2020-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://zuizichuan.cn/2020/07/19/baseC/</loc>
+    <lastmod>2020-08-25</lastmod>
+  </url>
+  <url>
     <loc>https://zuizichuan.cn/2020/08/24/LeetCode-dfs%E6%B7%B1%E5%BA%A6%E6%90%9C%E7%B4%A2/</loc>
     <lastmod>2020-08-24</lastmod>
   </url>
@@ -14,10 +22,6 @@
   </url>
   <url>
     <loc>https://zuizichuan.cn/2022/07/24/Directory-Record-1/</loc>
-    <lastmod>2020-08-24</lastmod>
-  </url>
-  <url>
-    <loc>https://zuizichuan.cn/2020/08/24/LeetCode-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
     <lastmod>2020-08-24</lastmod>
   </url>
   <url>
@@ -39,10 +43,6 @@
   <url>
     <loc>https://zuizichuan.cn/2020/08/06/yqz%E9%9D%A2%E7%BB%8F/</loc>
     <lastmod>2020-08-23</lastmod>
-  </url>
-  <url>
-    <loc>https://zuizichuan.cn/2020/07/19/baseC/</loc>
-    <lastmod>2020-08-22</lastmod>
   </url>
   <url>
     <loc>https://zuizichuan.cn/2020/08/22/%E7%94%9F%E6%B4%BB-%E6%84%9F%E6%A6%82/</loc>
