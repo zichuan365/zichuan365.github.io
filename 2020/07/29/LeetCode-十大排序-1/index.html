@@ -106,7 +106,8 @@
 </li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len = nums.<span class="built_in">size</span>();</span><br><span class="line">	<span class="keyword">return</span> quickSort(nums, <span class="number">0</span>, len - <span class="number">1</span>, len - k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quickSort</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len1 = left;</span><br><span class="line">	<span class="keyword">int</span> len2 = right;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> base = nums[left];</span><br><span class="line">	<span class="keyword">while</span> (len1 &lt; len2) &#123;</span><br><span class="line">		<span class="keyword">while</span> (nums[len2] &gt;= base &amp;&amp; len1 &lt; len2)</span><br><span class="line">			len2--;</span><br><span class="line">		<span class="keyword">while</span> (nums[len1] &lt;= base &amp;&amp; len1 &lt; len2)</span><br><span class="line">			len1++;</span><br><span class="line">		<span class="keyword">if</span> (len1 &lt; len2) &#123;</span><br><span class="line">			<span class="keyword">int</span> temp = nums[len1];</span><br><span class="line">			nums[len1] = nums[len2];</span><br><span class="line">			nums[len2] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//握手,元素换位</span></span><br><span class="line">	nums[left] = nums[len1];</span><br><span class="line">	nums[len1] = base;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (k == len1)</span><br><span class="line">		<span class="keyword">return</span> nums[len1];</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (k &lt; len1)</span><br><span class="line">		<span class="keyword">return</span> quickSort(nums, left, len1 - <span class="number">1</span>, k);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> quickSort(nums, len1 + <span class="number">1</span>, right, k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<hr>
+<p><font size=6> 优先队列 </font> </p>
 <ul>
 <li><blockquote>
 <p>堆排序：（剑指_41）</p>
@@ -119,14 +120,60 @@
 <p><img src="/pictures/clipboard141.png" alt="img"></p>
 <ul>
 <li><blockquote>
+<p>题目：数组中第K大的数</p>
+</blockquote>
+</li>
+<li><blockquote>
 <p>维护一个小顶堆即可</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;nums, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> numsSize = <span class="keyword">int</span>(nums.<span class="built_in">size</span>());</span><br><span class="line">	<span class="keyword">if</span> (numsSize == <span class="number">0</span> || k &gt; numsSize)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; store;</span><br><span class="line">	<span class="comment">//堆中维持k个最大数</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numsSize; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		store.push(nums[i]);</span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">int</span>(store.<span class="built_in">size</span>()) &gt; k)</span><br><span class="line">		&#123;</span><br><span class="line">			store.pop();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	result = store.top();</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
-<h2 id="非比较类排序"><a href="#非比较类排序" class="headerlink" title="非比较类排序"></a>非比较类排序</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">minimumTotal</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; triangle)</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+<p><font size=6> 二分查找库函数 </font> </p>
+<ul>
+<li><blockquote>
+<p>头文件：algorithm</p>
+</blockquote>
+</li>
+<li><p>lower_bound( begin,end,num )</p>
+<ul>
+<li>查找第一个大于或等于num的数字—— &gt;=num</li>
+</ul>
+</li>
+<li><p>upper_bound( begin,end,num )</p>
+<ul>
+<li>查找第一个大于num的数字 —— &gt;num</li>
+</ul>
+</li>
+<li><blockquote>
+<p>例题LeetCode870：给定两个大小相等的数组 A 和 B，A 相对于 B 的优势可以用满足 A[i] &gt; B[i] 的索引 i 的数目来描述。</p>
+</blockquote>
+</li>
+<li><p>返回 A 的任意排列，使其相对于 B 的优势最大化。</p>
+</li>
+<li><blockquote>
+<p>输入：A = [2,7,11,15], B = [1,10,4,11]</p>
+</blockquote>
+</li>
+<li><p>输出：[2,11,7,15]</p>
+</li>
+<li><blockquote>
+<p>输入：A = [12,24,8,32], B = [13,25,32,11]</p>
+</blockquote>
+</li>
+<li><p>输出：[24,32,8,12]</p>
+</li>
+<li><blockquote>
+<p>解题方法：田忌赛马</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">advantageCount</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; B)</span> </span>&#123;</span><br><span class="line">	sort(A.<span class="built_in">begin</span>(), A.<span class="built_in">end</span>());</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; B.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">		<span class="keyword">auto</span> iter = upper_bound(A.<span class="built_in">begin</span>(), A.<span class="built_in">end</span>(), B[i]);</span><br><span class="line">		<span class="keyword">if</span> (iter != A.<span class="built_in">end</span>()) &#123;</span><br><span class="line">			ans.push_back(*iter);</span><br><span class="line">			A.erase(iter);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			ans.push_back(A[<span class="number">0</span>]);</span><br><span class="line">			A.erase(A.<span class="built_in">begin</span>());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
 <hr>
+<h2 id="非比较类排序"><a href="#非比较类排序" class="headerlink" title="非比较类排序"></a>非比较类排序</h2><hr>
 <h3 id="8-计数"><a href="#8-计数" class="headerlink" title="8.计数"></a>8.计数</h3><ul>
 <li><blockquote>
 <p>1-100最快的排数，适用于数字范围不大地数字段。</p>
