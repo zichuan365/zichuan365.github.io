@@ -43,7 +43,10 @@
 </ul>
 <ol>
 <li><strong>开放寻址法</strong>：当发现散列冲突后，按着顺序往下查找空余位置存放数据。简单来说就是进行<strong>二次探测</strong>。</li>
-<li><strong>链表法</strong>：在同一个Key对应的位置使用链表，从而达到存放多个数据的目的</li>
+<li><strong>链表法</strong>：在同一个Key对应的位置使用链表，从而达到存放多个数据的目的<ul>
+<li>当链表太长时，长度大于8，我们可以使用红黑树进行降维。</li>
+</ul>
+</li>
 </ol>
 <h3 id="3-应用"><a href="#3-应用" class="headerlink" title="3.应用"></a>3.应用</h3><ol>
 <li><strong>安全领域的加密算法</strong>：把一些不同长度的信息转化为杂乱128位的编码，编码值叫Hash值。</li>
