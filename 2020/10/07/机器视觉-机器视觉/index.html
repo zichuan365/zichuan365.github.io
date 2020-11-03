@@ -7,7 +7,7 @@
     error: '复制错误',
     noSupport: '浏览器不支持'
   }
-} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础知识"><span class="toc-number">1.</span> <span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-相机靶面尺寸换算"><span class="toc-number">1.1.</span> <span class="toc-text">1.相机靶面尺寸换算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-相机的视差大小计算"><span class="toc-number">1.2.</span> <span class="toc-text">2.相机的视差大小计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-双目测量精度"><span class="toc-number">1.3.</span> <span class="toc-text">3.双目测量精度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-图片大小的计算"><span class="toc-number">1.4.</span> <span class="toc-text">4.图片大小的计算</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/4321.jpg"></div><div class="author-info__name text-center">Inter</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">43</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">3</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">52</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" href="https://blog.csdn.net/Kano365" target="_blank" rel="noopener">CSDN</a><a class="author-info-links__name text-center" href="https://leetcode-cn.com/problemset/all/" target="_blank" rel="noopener">Leetcode</a><a class="author-info-links__name text-center" href="https://leetcode-cn.com/problemset/lcof/" target="_blank" rel="noopener">Offer68</a><a class="author-info-links__name text-center" href="https://space.bilibili.com/3007680" target="_blank" rel="noopener">Bilibili</a><a class="author-info-links__name text-center" href="https://www.baidu.com/" target="_blank" rel="noopener">Baidu</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/6.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Zichuan365' Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/gallery">Gallery</a><a class="site-page" href="/about">About</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">机器视觉  / 机器视觉</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-07</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">机器视觉</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%9F%BA%E7%A1%80/">机器视觉基础</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><ul>
+} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础知识"><span class="toc-number">1.</span> <span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-相机靶面尺寸换算"><span class="toc-number">1.1.</span> <span class="toc-text">1.相机靶面尺寸换算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-相机的视差大小计算"><span class="toc-number">1.2.</span> <span class="toc-text">2.相机的视差大小计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-双目测量精度"><span class="toc-number">1.3.</span> <span class="toc-text">3.双目测量精度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-图片大小的计算"><span class="toc-number">1.4.</span> <span class="toc-text">4.图片大小的计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-双目立体匹配"><span class="toc-number">1.5.</span> <span class="toc-text">5.双目立体匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-极线约束"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.极线约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-深度与视差"><span class="toc-number">1.5.2.</span> <span class="toc-text">2.深度与视差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-立体匹配的步骤详解"><span class="toc-number">1.5.3.</span> <span class="toc-text">3.立体匹配的步骤详解</span></a></li></ol></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/4321.jpg"></div><div class="author-info__name text-center">Inter</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">44</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">3</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">分类</span><span class="pull-right">52</span></a></div><hr><div class="author-info-links"><div class="author-info-links__title text-center">Links</div><a class="author-info-links__name text-center" href="https://blog.csdn.net/Kano365" target="_blank" rel="noopener">CSDN</a><a class="author-info-links__name text-center" href="https://leetcode-cn.com/problemset/all/" target="_blank" rel="noopener">Leetcode</a><a class="author-info-links__name text-center" href="https://leetcode-cn.com/problemset/lcof/" target="_blank" rel="noopener">Offer68</a><a class="author-info-links__name text-center" href="https://space.bilibili.com/3007680" target="_blank" rel="noopener">Bilibili</a><a class="author-info-links__name text-center" href="https://www.baidu.com/" target="_blank" rel="noopener">Baidu</a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/6.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Zichuan365' Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/gallery">Gallery</a><a class="site-page" href="/about">About</a></span><span class="pull-right"><a class="site-page social-icon search"><i class="fa fa-search"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title">机器视觉  / 机器视觉</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-10-07</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">机器视觉</a><i class="fa fa-angle-right" aria-hidden="true"></i><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89%E5%9F%BA%E7%A1%80/">机器视觉基础</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><ul>
 <li><blockquote>
 <p>机器视觉四要素：相机、镜头、光源、目标物</p>
 </blockquote>
@@ -56,7 +56,129 @@
 <ul>
 <li>大小：1920 x 1080 x 8 / 8 = 2073600字节 = 2025Kb = 1.98Mb</li>
 </ul>
-</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Inter</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zuizichuan.cn/2020/10/07/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">https://zuizichuan.cn/2020/10/07/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zuizichuan.cn">Zichuan365' Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2022/07/24/Directory-Record-1/"><i class="fa fa-chevron-left">  </i><span>Directory_Directory_Directory</span></a></div><div class="next-post pull-right"><a href="/2020/10/07/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-Opencv%E7%AF%87/"><span>机器视觉 / 图像处理_Opencv篇</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="vcomment"></div><script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var notify = 'true' == true ? true : false;
+<h3 id="5-双目立体匹配"><a href="#5-双目立体匹配" class="headerlink" title="5.双目立体匹配"></a>5.双目立体匹配</h3><ul>
+<li><blockquote>
+<p>计算公式</p>
+</blockquote>
+</li>
+<li>Z = f * b / d<ul>
+<li>Z:距离 </li>
+<li>f:焦距</li>
+<li>b:左右相机基线距离</li>
+<li>d:视差</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-极线约束"><a href="#1-极线约束" class="headerlink" title="1.极线约束"></a>1.极线约束</h4><ul>
+<li><p>双目立体匹配在寻找同名点的过程中，若没有任何先验约束，则对左影像每个像素，需要在右影像全图空间中进行搜索，这种暴力搜索方法不仅效率非常低，而且很容易由于各种因素（如弱纹理、重复纹理等）搜索到错误的对应点，而利用核线几何约束则是减小搜索范围，提高匹配效率且降低错误匹配的一种有效方法。</p>
+</li>
+<li><p>作用：将对应像点的搜索区域从二维降到了一维。<br><img src="/pictures/321.jpg" alt="img"></p>
+</li>
+</ul>
+<h4 id="2-深度与视差"><a href="#2-深度与视差" class="headerlink" title="2.深度与视差"></a>2.深度与视差</h4><ul>
+<li>通过三角形Ppp’和三角形POO相似，进行物距Z的求取。<br><img src="/pictures/2122.jpg" alt="img"></li>
+</ul>
+<p><img src="/pictures/clipboard162.png" alt="img"></p>
+<h4 id="3-立体匹配的步骤详解"><a href="#3-立体匹配的步骤详解" class="headerlink" title="3.立体匹配的步骤详解"></a>3.立体匹配的步骤详解</h4><ul>
+<li><blockquote>
+<p>1.匹配代价计算</p>
+</blockquote>
+</li>
+<li><p>匹配代价计算的目的是衡量<strong>待匹配像素</strong>与<strong>候选像素</strong>之间的<strong>相关性</strong>。两个像素无论是否为同名点，都可以通过匹配代价函数计算匹配代价，<strong>代价越小则说明相关性越大，是同名点的概率也越大。</strong></p>
+</li>
+<li><p>每个像素在搜索同名点之前，往往会指定一个视差搜索范围D（Dmin ~ Dmax）,视差搜索时将范围限定在D内，用一个大小为W×H×D（W为影像宽度，H为影像高度）的三维矩阵C来存储每个像素在视差范围内每个视差下的匹配代价值。矩阵C通常称为DSI（Disparity Space Image）。</p>
+</li>
+<li><p>匹配代价计算的方法</p>
+<ul>
+<li>传统的摄影测量中：<ul>
+<li><strong>灰度绝对值差</strong>（AD，Absolute Differences）</li>
+<li><strong>灰度绝对值差之和</strong>（SAD，Sum of Absolute Differences）、</li>
+<li><strong>归一化相关系数</strong>（NCC，Normalized Cross-correlation）</li>
+</ul>
+</li>
+<li>计算机视觉中：<ul>
+<li><strong>互信息</strong>（MI，Mutual Information）法</li>
+<li><strong>Census变换</strong>（CT，Census Transform）法</li>
+<li><strong>Rank变换</strong>（RT, Rank Transform）法</li>
+<li><strong>BT</strong>（Birchfield and Tomasi）法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>不同的代价计算算法都有各自的特点，对各类数据的表现也不尽相同，选择合适的匹配代价计算函数是立体匹配中不可忽视的关键步骤。</p>
+</li>
+</ul>
+<p><img src="/pictures/clipboard163.png" alt="img"></p>
+<ul>
+<li><blockquote>
+<p>2.代价聚合</p>
+</blockquote>
+</li>
+<li><p>从全局进行考虑</p>
+</li>
+<li><p><strong>代价聚合</strong>的根本目的是让代价值能够准确的反映像素之间的相关性。上一步匹配代价的计算往往只会考虑局部信息，通过两个像素邻域内一定大小的窗口内的像素信息来计算代价值，这很容易受到影像噪声的影响，而且当影像处于弱纹理或重复纹理区域，这个代价值极有可能无法准确的反映像素之间的相关性，直接表现就是真实同名点的代价值非最小。</p>
+</li>
+<li><p>而代价聚合则是建立邻接像素之间的联系，以一定的准则，如相邻像素应该具有连续的视差值，来对代价矩阵进行优化，这种优化往往是全局的，每个像素在某个视差下的新代价值都会根据其相邻像素在同一视差值或者附近视差值下的代价值来重新计算，得到新的DSI，用矩阵S来表示。<br><img src="/pictures/clipboard164.png" alt="img"></p>
+</li>
+<li><blockquote>
+<p>3.视差计算</p>
+</blockquote>
+</li>
+<li><p>视差计算即通过代价聚合之后的代价矩阵S来确定每个像素的最优视差值，通常使用<strong>赢家通吃算法</strong>（WTA，Winner-Takes-All）来计算，如图2所示，即某个像素的所有视差下的代价值中，选择最小代价值所对应的视差作为最优视差。这一步非常简单，这意味着聚合代价矩阵S的值必须能够准确的反映像素之间的相关性，也表明上一步代价聚合步骤是立体匹配中极为关键的步骤，直接决定了算法的准确性。</p>
+</li>
+<li><blockquote>
+<p>赢家通吃（WTA）算法示意图<br><img src="/pictures/clipboard165.png" alt="img"></p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>4.视差优化</p>
+</blockquote>
+</li>
+<li><p><strong>视差优化</strong>的目的是对上一步得到的视差图进行进一步优化，改善视差图的质量，包括剔除错误视差、适当平滑以及子像素精度优化等步骤，一般采用左右一致性检查（Left-Right Check）算法剔除因为遮挡和噪声而导致的错误视差；采用剔除小连通区域算法来剔除孤立异常点；采用中值滤波（Median Filter）、双边滤波（Bilateral Filter）等平滑算法对视差图进行平滑；另外还有一些有效提高视差图质量的方法如鲁棒平面拟合（Robust Plane Fitting）、亮度一致性约束（Intensity Consistent）、局部一致性约束（Locally Consistent）等也常被使用。</p>
+</li>
+<li><p>由于WTA算法所得到的视差值是整像素精度，为了获得更高的子像素精度，需要对视差值进行进一步的子像素细化，常用的子像素细化方法是一元二次曲线拟合法，通过最优视差下的代价值以及左右两个视差下的代价值拟合一条一元二次曲线，取二次曲线的极小值点所代表的视差值为子像素视差值。如图3所示。<br><img src="/pictures/clipboard166.png" alt="img"></p>
+</li>
+<li><blockquote>
+<p>局部匹配算法的步骤:1.匹配代价计算、2.代价聚合、3.视差计算三个步骤</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>全局匹配算法的步骤:1.匹配代价计算、2.视差计算、3.视差优化三个步骤，</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>半全局算法 SGM：1.匹配代价计算、2.代价聚合、3.视差计算、3.视差优化</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><blockquote>
+<p>半全局算法SGM介绍：</p>
+</blockquote>
+</li>
+<li><p><strong>局部</strong>：一维搜索，高效率的局部算法，基于局部窗口视差相同的假设。在很多情况下不成立。</p>
+</li>
+<li><p><strong>全局</strong>：二维搜索，通过二维相邻像素视差之间的约束（如平滑性约束）—相邻像素视差d在一定情况下是平滑的。而得到更好的匹配效果，但是对内存的占用量大，速度慢</p>
+</li>
+<li><p>半全局：采用全局的框架，在<strong>计算能量函数最小化的步骤时使用高效率的一维路径聚合方法来代替全局算法中的二维最小化算法</strong>，使用一维最优来近似二维最优，得到的视差图在效果上和全局算法没有太大的差别，但是算法效率却有非常大的提升。</p>
+</li>
+<li><blockquote>
+<p>半全局<strong>匹配代价</strong>计算的常用方法：</p>
+</blockquote>
+</li>
+<li><p><strong>互信息</strong>（Mutual Information，MI）</p>
+<ul>
+<li>熵</li>
+<li>互信息是一种对<strong>影像明暗变化不敏感</strong>的相关性测度，它通过两张影像<strong>各自的熵H以及两者的联合熵</strong>来定义，<strong>熵代表影像的信息量</strong>，是基于灰度的概率分布所得到的统计量，图像的熵越大代表包含的像素灰度越丰富，灰度分布越均匀。互信息MI通过公式1来计算。</li>
+</ul>
+</li>
+<li><p><strong>Census变换</strong>（汉明距离）</p>
+<ul>
+<li>SAD窗口内的像素灰度差异进行存储。将比较得到的布尔值映射到一个比特串中，最后用比特串的值作为中心像素的Census变换值</li>
+</ul>
+</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Inter</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://zuizichuan.cn/2020/10/07/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">https://zuizichuan.cn/2020/10/07/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89-%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://zuizichuan.cn">Zichuan365' Blog</a>！</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/10/29/Linux-qmake%E9%97%AE%E9%A2%98/"><i class="fa fa-chevron-left">  </i><span>Linux / qmake问题</span></a></div><div class="next-post pull-right"><a href="/2020/10/07/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86-Opencv%E7%AF%87/"><span>机器视觉 / 图像处理_Opencv篇</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="vcomment"></div><script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var notify = 'true' == true ? true : false;
 var verify = 'true' == true ? true : false;
 var GUEST_INFO = ['nick','mail','link'];
 var guest_info = 'nick,mail,link'.split(',').filter(function(item){
